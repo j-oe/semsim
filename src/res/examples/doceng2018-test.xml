@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE document PUBLIC "-//PI-MOD-STANDARD//DTD Document V1.2.0//EN" "DTD/PI-Mod-Custom/DTD/document-pimod-standard.dtd">
+<document>
+	<descriptive nodeid="Example A" infoclass-1="note" prodclass-1="device">
+		<heading></heading>
+		<descriptive_body>
+			<paragraph>This device is designed to work with a voltage of <inlinedata><si-value><number>110</number> <unit>V</unit></si-value></inlinedata> only.</paragraph>
+		</descriptive_body>
+	</descriptive>
+	<descriptive nodeid="Example B" infoclass-1="note" prodclass-1="device">
+		<heading></heading>
+		<descriptive_body>
+			<paragraph>This device is designed to work with a voltage of <inlinedata><si-value><number>220</number> <unit>V</unit></si-value></inlinedata> only.</paragraph>
+		</descriptive_body>
+	</descriptive>
+	<descriptive nodeid="Example C" infoclass-1="note" prodclass-1="device">
+		<heading></heading>
+		<descriptive_body>
+			<paragraph>This device works with a voltage of <inlinedata><si-value><number>120</number> <unit>V</unit></si-value></inlinedata> only.</paragraph>
+		</descriptive_body>
+	</descriptive>
+	<descriptive nodeid="Example D" infoclass-1="note" prodclass-1="device">
+		<heading></heading>
+		<descriptive_body>
+			<paragraph>This device works with a voltage of <inlinedata><si-value><number>220</number> <unit>V</unit></si-value></inlinedata> only.</paragraph>
+		</descriptive_body>
+	</descriptive>
+</document>

@@ -1,0 +1,88 @@
+/* XMetaL styles */
+/*
+  *******************************************************************************
+  * RevisionInformation:
+  * $LastChangedRevision: 1970 $
+  * $LastChangedDate: 2009-08-17 12:06:40 +0200 (Mo, 17 Aug 2009) $
+  *******************************************************************************
+ */
+
+
+
+/*** ========================================================================================= ***/
+/*** Module types ***/
+chapter,
+descriptive,
+diagnosis,
+glossary,
+lubrication,
+task,
+taskintervals,
+tools 
+{
+  border: 0.5pt solid #4682B4;
+  display : block;
+  margin : 5pt;
+  padding : 3pt;
+}
+
+/*** // Allgemeine Formatierungen */
+chapter:before,
+descriptive:before,
+diagnosis:before,
+glossary:before,
+lubrication:before,
+task:before,
+taskintervals:before,
+tools:before
+{
+    background-color : #E8EEEE ;
+    border : #B0C4DE solid 0.5pt;
+    color : #808080;
+    display : block;
+    font-size : 85%;
+    margin-left : -10pt;
+    margin-right : -10pt;
+    margin-top : 3pt;
+    margin-bottom : 5pt;
+    padding : 1.5pt 1.5pt 1.5pt 10pt;
+}
+
+
+/*** // Spezielle Formatierungen */
+chapter:before {
+    content: 'Dokumentstruktur: Kapitel (' attr(infoclass-1) '  | ' attr(prodclass-1) ')';
+}
+descriptive:before {
+    content: 'Modul: Beschreibung (' attr(infoclass-1) '  | ' attr(prodclass-1) ')';
+}
+diagnosis:before {
+    content: 'Modul: Fehlertabelle (' attr(infoclass-1) '  | ' attr(prodclass-1) ')';
+}
+glossary:before {
+    content: 'Modul: Glossar (' attr(infoclass-1) '  | ' attr(prodclass-1) ')';
+}
+lubrication:before {
+    content: 'Modul: Schmier- und Betriebsmittel (' attr(infoclass-1) '  | ' attr(prodclass-1) ')';
+}
+task:before {
+    content: 'Modul: Handlungsblock (' attr(infoclass-1) ' | ' attr(prodclass-1) ')';
+}
+taskintervals:before {
+    content: 'Modul: Wartungsplan (' attr(infoclass-1) '  | ' attr(prodclass-1) ')';
+}
+tools:before {
+    content: 'Modul: Werkzeuge (' attr(infoclass-1) '  | ' attr(prodclass-1) ')';
+}
+
+/* Module type bodies */
+descriptive_body,
+diagnosis_body,
+glossary_body,
+lubrication_body,
+task_body,
+taskintervals_body,
+tools_body
+{
+	  display: block;
+}

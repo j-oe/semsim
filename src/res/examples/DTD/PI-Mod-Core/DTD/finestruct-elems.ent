@@ -1,0 +1,1948 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ***************************************************************************
+
+PI-Mod V1.2.2 - DTD Module "finestruct-elems.ent"
+
+********************************************************************************
+
+DTD module declares element types of the fine structure of PI-Mod.
+
+Public Identifier:
+
+    "-//PI-MOD//ELEMENTS Fine Structure V1.2.2//EN"
+
+Typical invocation:
+
+	<!ENTITY % finestruct-elems
+		PUBLIC "-//PI-MOD//ELEMENTS Fine Structure V1.2.2//EN"
+		"finestruct-elems.ent"
+	>
+	%finestruct-elems;
+
+********************************************************************************
+
+Copyright (C) 2011, The PI-Mod Project
+
+Contributors to the The PI-Mod Project (V1.2.2): 
+ 	 Wolfgang Ziegler 
+ 	 Stephan Steurer 
+ 	 Claudia Oberle
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+
+********************************************************************************
+
+Naming conventions for parameter entities:
+
+	cmf.ELEMENTGROUP	content model fragment: collects similar 
+				elements in group ELEMENTGROUP
+	cm.ELEMENT		content model: complete content model of element
+				ELEMENT
+	att.ATTRIBUTE		attribute: declaration of single attribute
+				ATTRIBUTE (with Name Type Default)
+	attv.ATTRIBUTE		attribute value enumeration: enumeration of
+				predefined values for Attribute ATTRIBUTE
+	atts.ATTRIBUTEGROUP	attribute sublist: collects attributes, which 
+				belong together, in group ATTRIBUTEGROUP
+	attl.ELEMENT		attribute list: complete attribute list of
+				element ELEMENT
+	attle.ELEMENT		attribute list extension: extension point for
+				additonial project specific attributes of
+				element ELEMENT; is always empty string in
+				PI-Mod Core DTD modules
+	csp.			conditional section parameter: conditional 
+				section for ... (see below), which can be
+				enabled (INCLUDE) or disabled (IGNORE)
+	csp.el.ELEMENT		... element: element declaration and
+				corresponding attribute declration of Element
+				ELEMENT
+	csp.es.ENTITY-SET	... entity set: declaration and call of 
+				parameter entity of entity set ENTITY-SET
+
+**************************************************************************** -->
+
+<!-- ************* Overwrite OASIS table parameter entities **************** -->
+
+
+<!ENTITY % tbl.table.mdl "
+	%cm.table;
+">
+<!ENTITY % tbl.entry.mdl "
+	%cm.entry;
+">
+<!ENTITY % tbl.table.att "
+	%attl.table;
+	%attle.table;
+">
+<!ENTITY % tbl.tgroup.att "
+	%attl.tgroup;
+	%attle.tgroup;
+">
+<!ENTITY % tbl.thead.att "
+	%attl.thead;
+	%attle.thead;
+">
+<!ENTITY % tbl.tbody.att "
+	%attl.tbody;
+	%attle.tbody;
+">
+<!ENTITY % tbl.colspec.att "
+	%attl.colspec;
+	%attle.colspec;
+">
+<!ENTITY % tbl.row.att "
+	%attl.row;
+	%attle.row;
+">
+<!ENTITY % tbl.entry.att "
+	%attl.entry;
+	%attle.entry;
+">
+
+<!-- **************** Include OASIS Exchange Table Model ****************** -->
+
+<!ENTITY % calstblx
+	PUBLIC "-//OASIS//DTD XML Exchange Table Model 19990315//EN"
+	"exchgtblx.ent"
+>
+%calstblx;
+
+<!-- ************************ Element declarations ************************ -->
+
+<!-- **** Element <action> **** -->
+
+<!ENTITY % csp.el.action "INCLUDE">
+<![%csp.el.action;[
+
+<!ENTITY % cm.action "
+	(condition?, step)
+">
+<!ENTITY % attl.action "
+	%att.nodeid;
+	%att.translate; 
+	%att.valid;
+">
+<!ENTITY % attle.action "">
+
+<!ELEMENT action %cm.action;>
+<!ATTLIST action
+	%attl.action;
+	%attle.action;
+>
+]]>
+
+
+<!-- **** Element <actiondescription> **** -->
+
+<!ENTITY % csp.el.actiondescription "INCLUDE">
+<![%csp.el.actiondescription;[
+
+<!ENTITY % cm.actiondescription "
+	(%cmf.standardblock;)+
+">
+<!ENTITY % attl.actiondescription "
+	%att.nodeid;
+	%att.translate; 
+	%att.valid;
+">
+<!ENTITY % attle.actiondescription "">
+
+<!ELEMENT actiondescription %cm.actiondescription;>
+<!ATTLIST actiondescription
+	%attl.actiondescription;
+	%attle.actiondescription;
+>
+]]>
+
+
+<!-- **** Element <actionsequenceend> **** -->
+
+<!ENTITY % csp.el.actionsequenceend "INCLUDE">
+<![%csp.el.actionsequenceend;[
+
+<!ENTITY % cm.actionsequenceend "
+	(result?, troubleshooting?, note*)
+">
+<!ENTITY % attl.actionsequenceend "
+	%att.nodeid;
+	%att.translate; 
+	%att.valid;
+">
+<!ENTITY % attle.actionsequenceend "">
+
+<!ELEMENT actionsequenceend %cm.actionsequenceend;>
+<!ATTLIST actionsequenceend
+	%attl.actionsequenceend;
+	%attle.actionsequenceend;
+>
+]]>
+
+
+<!-- **** Element <caption> **** -->
+
+<!ENTITY % csp.el.caption "INCLUDE">
+<![%csp.el.caption;[
+
+<!ENTITY % cm.caption "
+	(%cmf.plaintext;)*
+">
+<!ENTITY % attl.caption "
+	%att.nodeid;
+	%att.translate; 
+">
+<!ENTITY % attle.caption "">
+
+<!ELEMENT caption %cm.caption;>
+<!ATTLIST caption
+	%attl.caption;
+	%attle.caption;
+>
+]]>
+
+
+<!-- **** Element <cause> **** -->
+
+<!ENTITY % csp.el.cause "INCLUDE">
+<![%csp.el.cause;[
+
+<!ENTITY % cm.cause "
+	(%cmf.plaintext;)*
+">
+<!ENTITY % attl.cause "
+	%att.nodeid;
+	%att.translate;
+	%att.valid;
+">
+<!ENTITY % attle.cause "">
+
+<!ELEMENT cause %cm.cause;>
+<!ATTLIST cause
+	%attl.cause;
+	%attle.cause;
+>
+]]>
+
+
+<!-- **** Element <safetysymbol> **** -->
+
+<!ENTITY % csp.el.safetysymbol "INCLUDE">
+<![%csp.el.safetysymbol;[
+
+<!ENTITY % cm.safetysymbol "
+	EMPTY
+">
+<!ENTITY % attl.safetysymbol "
+  objectname CDATA #REQUIRED
+	%att.nodeid;
+	%att.translate;
+">
+<!ENTITY % attle.safetysymbol "">
+
+<!ELEMENT safetysymbol %cm.safetysymbol;>
+<!ATTLIST safetysymbol
+	%attl.safetysymbol;
+	%attle.safetysymbol;
+>
+]]>
+
+
+<!-- **** Element <condition> **** -->
+
+<!ENTITY % csp.el.condition "INCLUDE">
+<![%csp.el.condition;[
+
+<!ENTITY % cm.condition "
+	(%cmf.plaintext;)*
+">
+<!ENTITY % attl.condition "
+	%att.nodeid;
+	%att.translate; 
+">
+<!ENTITY % attle.condition "">
+
+<!ELEMENT condition %cm.condition;>
+<!ATTLIST condition
+	%attl.condition;
+	%attle.condition;
+>
+]]>
+
+
+<!-- **** Element <consequences> **** -->
+
+<!ENTITY % csp.el.consequences "INCLUDE">
+<![%csp.el.consequences;[
+
+<!ENTITY % cm.consequences "
+	(%cmf.plaintext;)*
+">
+<!ENTITY % attl.consequences "
+	%att.nodeid;
+	%att.translate; 
+">
+<!ENTITY % attle.consequences "">
+
+<!ELEMENT consequences %cm.consequences;>
+<!ATTLIST consequences
+	%attl.consequences;
+	%attle.consequences;
+>
+]]>
+
+
+<!-- **** Element <data> **** -->
+
+<!ENTITY % csp.el.data "INCLUDE">
+<![%csp.el.data;[
+
+<!ENTITY % cm.data "
+	(datatype, ((si-value?, us-value?, (tolerance-asymmetric-value | tolerance-symmetric-value)?) | (lower-value, upper-value) | textdata))
+">
+<!ENTITY % attl.data "
+	%atts.data;
+	%att.nodeid;
+	%att.translate; 
+	%att.valid;
+">
+<!ENTITY % attle.data "">
+
+<!ELEMENT data %cm.data;>
+<!ATTLIST data
+	%attl.data;
+	%attle.data;
+>
+]]>
+
+
+<!-- **** Element <diagnosisinfo> **** -->
+
+<!ENTITY % csp.el.diagnosisinfo "INCLUDE">
+<![%csp.el.diagnosisinfo;[
+
+<!ENTITY % cm.diagnosisinfo "
+	(errordescription)+
+">
+<!ENTITY % attl.diagnosisinfo "
+	%att.nodeid; 
+	%att.translate;
+">
+<!ENTITY % attle.diagnosisinfo "">
+
+<!ELEMENT diagnosisinfo %cm.diagnosisinfo;>
+<!ATTLIST diagnosisinfo
+	%attl.diagnosisinfo;
+	%attle.diagnosisinfo;
+>
+]]>
+
+
+<!-- **** Element <inlinedata> **** -->
+
+<!ENTITY % csp.el.inlinedata "INCLUDE">
+<![%csp.el.inlinedata;[
+
+<!ENTITY % cm.inlinedata "
+	(%cmf.simpledata;)
+">
+<!ENTITY % attl.inlinedata "
+	%atts.data;
+	%att.nodeid;
+	%att.translate; 
+	%att.valid;
+">
+<!ENTITY % attle.inlinedata "">
+
+<!ELEMENT inlinedata %cm.inlinedata;>
+<!ATTLIST inlinedata
+	%attl.inlinedata;
+	%attle.inlinedata;
+>
+]]>
+
+
+<!-- **** Element <datatype> **** -->
+
+<!ENTITY % csp.el.datatype "INCLUDE">
+<![%csp.el.datatype;[
+
+<!ENTITY % cm.datatype "
+	(%cmf.justtext; | %cmf.values; | %cmf.links; | subscript | superscript)*
+">
+<!ENTITY % attl.datatype "
+	%att.nodeid;
+	%att.translate; 
+">
+<!ENTITY % attle.datatype "">
+
+<!ELEMENT datatype %cm.datatype;>
+<!ATTLIST datatype
+	%attl.datatype;
+	%attle.datatype;
+>
+]]>
+
+
+<!-- **** Element <description> **** -->
+
+<!ENTITY % csp.el.description "INCLUDE">
+<![%csp.el.description;[
+
+<!ENTITY % cm.description "
+	(%cmf.plaintext;)*
+">
+<!ENTITY % attl.description "
+	%att.nodeid;
+	%att.translate; 
+	%att.valid;
+">
+<!ENTITY % attle.description "">
+
+<!ELEMENT description %cm.description;>
+<!ATTLIST description
+	%attl.description;
+	%attle.description;
+>
+]]>
+
+
+<!-- **** Element <emphasis> **** -->
+
+<!ENTITY % csp.el.emphasis "INCLUDE">
+<![%csp.el.emphasis;[
+
+<!ENTITY % cm.emphasis "
+	(%cmf.justtext; | %cmf.inlinemediaobjects; | quoted | %cmf.links; | subscript | superscript | inlinedata)*
+">
+<!ENTITY % attl.emphasis "
+	%att.nodeid;
+	%att.translate; 
+">
+<!ENTITY % attle.emphasis "">
+
+<!ELEMENT emphasis %cm.emphasis;>
+<!ATTLIST emphasis
+	%attl.emphasis;
+	%attle.emphasis;
+>
+]]>
+
+
+<!-- **** Element <key-entry> **** -->
+
+<!ENTITY % csp.el.key-entry "INCLUDE">
+<![%csp.el.key-entry;[
+
+<!ENTITY % cm.key-entry "
+	(%cmf.justtext;)*
+">
+<!ENTITY % attl.key-entry "
+	%att.nodeid; 
+	%att.translate; 
+">
+<!ENTITY % attle.key-entry "">
+
+<!ELEMENT key-entry %cm.key-entry;>
+<!ATTLIST key-entry
+	%attl.key-entry;
+	%attle.key-entry;
+>
+]]>
+
+
+<!-- **** Element <error-code> **** -->
+
+<!ENTITY % csp.el.error-code "INCLUDE">
+<![%csp.el.error-code;[
+
+<!ENTITY % cm.error-code "
+	(%cmf.plaintext;)*
+">
+<!ENTITY % attl.error-code "
+	%att.nodeid;
+	%att.translate; 
+">
+<!ENTITY % attle.error-code "">
+
+<!ELEMENT error-code %cm.error-code;>
+<!ATTLIST error-code
+	%attl.error-code;
+	%attle.error-code;
+>
+]]>
+
+
+<!-- **** Element <errordescription> **** -->
+
+<!ENTITY % csp.el.errordescription "INCLUDE">
+<![%csp.el.errordescription;[
+
+<!ENTITY % cm.errordescription "
+	(symptom, (cause, solution)+)
+">
+<!ENTITY % attl.errordescription "
+	%att.nodeid; 
+	%att.translate; 
+	%att.valid;
+">
+<!ENTITY % attle.errordescription "">
+
+<!ELEMENT errordescription %cm.errordescription;>
+<!ATTLIST errordescription
+	%attl.errordescription;
+	%attle.errordescription;
+>
+]]>
+
+
+<!-- **** Element <image> **** -->
+
+<!ENTITY % csp.el.image "INCLUDE">
+<![%csp.el.image;[
+
+<!ENTITY % cm.image "
+	EMPTY
+">
+<!ENTITY % attl.image "
+	objectname CDATA #REQUIRED
+	%att.nodeid;
+	%att.translate; 
+">
+<!ENTITY % attle.image "">
+
+<!ELEMENT image %cm.image;>
+<!ATTLIST image
+	%attl.image;
+	%attle.image;
+>
+]]>
+
+
+<!-- **** Element <footnote> **** -->
+
+<!ENTITY % csp.el.footnote "INCLUDE">
+<![%csp.el.footnote;[
+
+<!ENTITY % cm.footnote "
+	(%cmf.justtext; | %cmf.typography; | %cmf.links; | %cmf.inlinesemantics;)*
+">
+<!ENTITY % attl.footnote "
+	%att.nodeid;
+	%att.translate; 
+	%att.valid;
+">
+<!ENTITY % attle.footnote "">
+
+<!ELEMENT footnote %cm.footnote;>
+<!ATTLIST footnote
+	%attl.footnote;
+	%attle.footnote;
+>
+]]>
+
+
+<!-- **** Element <glossary-entry> **** -->
+
+<!ENTITY % csp.el.glossary-entry "INCLUDE">
+<![%csp.el.glossary-entry;[
+
+<!ENTITY % cm.glossary-entry "
+	(glossterm, glossdef)
+">
+<!ENTITY % attl.glossary-entry "
+	%att.nodeid;
+	%att.translate; 
+	%att.valid;
+">
+<!ENTITY % attle.glossary-entry "">
+
+<!ELEMENT glossary-entry %cm.glossary-entry;>
+<!ATTLIST glossary-entry
+	%attl.glossary-entry;
+	%attle.glossary-entry;
+>
+]]>
+
+
+<!-- **** Element <glossterm> **** -->
+
+<!ENTITY % csp.el.glossterm "INCLUDE">
+<![%csp.el.glossterm;[
+
+<!ENTITY % cm.glossterm "
+	(%cmf.titletext;)*
+">
+<!ENTITY % attl.glossterm "
+	%att.nodeid;
+	%att.translate; 
+">
+<!ENTITY % attle.glossterm "">
+
+<!ELEMENT glossterm %cm.glossterm;>
+<!ATTLIST glossterm
+	%attl.glossterm;
+	%attle.glossterm;
+>
+]]>
+
+
+<!-- **** Element <glossdef> **** -->
+
+<!ENTITY % csp.el.glossdef "INCLUDE">
+<![%csp.el.glossdef;[
+
+<!ENTITY % cm.glossdef "
+	(%cmf.complexblock;)+
+">
+<!ENTITY % attl.glossdef "
+	%att.nodeid;
+	%att.translate; 
+">
+<!ENTITY % attle.glossdef "">
+
+<!ELEMENT glossdef %cm.glossdef;>
+<!ATTLIST glossdef
+	%attl.glossdef;
+	%attle.glossdef;
+>
+]]>
+
+
+<!-- **** Element <mediaobject> **** -->
+
+<!ENTITY % csp.el.mediaobject "INCLUDE">
+<![%csp.el.mediaobject;[
+
+<!ENTITY % cm.mediaobject "
+	(image, caption?, legend?)
+">
+<!ENTITY % attl.mediaobject "
+	%atts.mediaobject;
+	%att.nodeid;
+	%att.valid;
+	%att.translate;
+">
+<!ENTITY % attle.mediaobject "">
+
+<!ELEMENT mediaobject %cm.mediaobject;>
+<!ATTLIST mediaobject
+	%attl.mediaobject;
+	%attle.mediaobject;
+>
+]]>
+
+
+<!-- **** Element <heading> **** -->
+
+<!ENTITY % csp.el.heading "INCLUDE">
+<![%csp.el.heading;[
+
+<!ENTITY % cm.heading "
+	(%cmf.titletext;)*
+">
+<!ENTITY % attl.heading "
+	%att.nodeid;
+	%att.translate; 
+">
+<!ENTITY % attle.heading "">
+
+<!ELEMENT heading %cm.heading;>
+<!ATTLIST heading
+	%attl.heading;
+	%attle.heading;
+>
+]]>
+
+
+<!-- **** Element <identification> **** -->
+
+<!ENTITY % csp.el.identification "INCLUDE">
+<![%csp.el.identification;[
+
+<!ENTITY % cm.identification "
+	(%cmf.plaintext;)*
+">
+<!ENTITY % attl.identification "
+	%att.nodeid;
+	%att.translate; 
+">
+<!ENTITY % attle.identification "">
+
+<!ELEMENT identification %cm.identification;>
+<!ATTLIST identification
+	%attl.identification;
+	%attle.identification;
+>
+]]>
+
+
+<!-- **** Element <identno> **** -->
+
+<!ENTITY % csp.el.identno "INCLUDE">
+<![%csp.el.identno;[
+
+<!ENTITY % cm.identno "
+	(%cmf.plaintext;)*
+">
+<!ENTITY % attl.identno "
+	%att.nodeid; 
+	%att.translate;
+">
+<!ENTITY % attle.identno "">
+
+<!ELEMENT identno %cm.identno;>
+<!ATTLIST identno
+	%attl.identno;
+	%attle.identno;
+>
+]]>
+
+
+<!-- **** Element <inlinemediaobject> **** -->
+
+<!ENTITY % csp.el.inlinemediaobject "INCLUDE">
+<![%csp.el.inlinemediaobject;[
+
+<!ENTITY % cm.inlinemediaobject "
+	EMPTY
+">
+<!ENTITY % attl.inlinemediaobject "
+	objectname CDATA #REQUIRED
+	%att.nodeid;
+	%att.translate; 
+">
+<!ENTITY % attle.inlinemediaobject "">
+
+<!ELEMENT inlinemediaobject %cm.inlinemediaobject;>
+<!ATTLIST inlinemediaobject
+	%attl.inlinemediaobject;
+	%attle.inlinemediaobject;
+>
+]]>
+
+
+<!-- **** Element <item> **** -->
+
+<!ENTITY % csp.el.item "INCLUDE">
+<![%csp.el.item;[
+
+<!ENTITY % cm.item "
+	(paragraph | list)+
+">
+<!ENTITY % attl.item "
+	%att.nodeid;
+	%att.valid;
+	%att.translate; 
+">
+<!ENTITY % attle.item "">
+
+<!ELEMENT item %cm.item;>
+<!ATTLIST item
+	%attl.item;
+	%attle.item;
+>
+]]>
+
+<!-- **** Element <itemno> **** -->
+
+<!ENTITY % csp.el.itemno "INCLUDE">
+<![%csp.el.itemno;[
+
+<!ENTITY % cm.itemno "
+	(%cmf.plaintext;)*
+">
+<!ENTITY % attl.itemno "
+	%att.nodeid;	
+	%att.translate; 
+">
+<!ENTITY % attle.itemno "">
+
+<!ELEMENT itemno %cm.itemno;>
+<!ATTLIST itemno
+	%attl.itemno;
+	%attle.itemno;
+>
+]]>
+
+<!-- **** Element <itemtext> **** -->
+
+<!ENTITY % csp.el.itemtext "INCLUDE">
+<![%csp.el.itemtext;[
+
+<!ENTITY % cm.itemtext "
+	(%cmf.plaintext;)*
+">
+<!ENTITY % attl.itemtext "
+	%att.nodeid;	
+	%att.translate; 
+">
+<!ENTITY % attle.itemtext "">
+
+<!ELEMENT itemtext %cm.itemtext;>
+<!ATTLIST itemtext
+	%attl.itemtext;
+	%attle.itemtext;
+>
+]]>
+
+<!-- **** Element <keyword> **** -->
+
+<!ENTITY % csp.el.keyword "INCLUDE">
+<![%csp.el.keyword;[
+
+<!ENTITY % cm.keyword "
+	(key-entry, key-entry?)
+">
+<!ENTITY % attl.keyword "
+	%att.nodeid;
+	%att.translate; 
+	%att.valid;
+">
+<!ENTITY % attle.keyword "">
+
+<!ELEMENT keyword %cm.keyword;>
+<!ATTLIST keyword
+	%attl.keyword;
+	%attle.keyword;
+>
+]]>
+
+
+<!-- **** Element <legend> **** -->
+
+<!ENTITY % csp.el.legend "INCLUDE">
+<![%csp.el.legend;[
+
+<!ENTITY % cm.legend "
+	(heading?, (legend | legenditem)+)
+">
+<!ENTITY % attl.legend "
+	%att.nodeid;	
+	%att.translate; 
+">
+<!ENTITY % attle.legend "">
+
+<!ELEMENT legend %cm.legend;>
+<!ATTLIST legend
+	%attl.legend;
+	%attle.legend;
+>
+]]>
+
+
+<!-- **** Element <legenditem> **** -->
+
+<!ENTITY % csp.el.legenditem "INCLUDE">
+<![%csp.el.legenditem;[
+
+<!ENTITY % cm.legenditem "
+	(itemno?, itemtext+)
+">
+<!ENTITY % attl.legenditem "
+	%att.nodeid;
+">
+<!ENTITY % attle.legenditem "">
+
+<!ELEMENT legenditem %cm.legenditem;>
+<!ATTLIST legenditem
+	%attl.legenditem;
+	%attle.legenditem;
+>
+]]>
+
+<!-- **** Element <list> **** -->
+
+<!ENTITY % csp.el.list "INCLUDE">
+<![%csp.el.list;[
+
+<!ENTITY % cm.list "
+	(keyword*, listintro?, item+, footnote*)
+">
+<!ENTITY % attl.list "
+	listtype (numbered | marked) 'marked'
+	%att.nodeid;
+	%att.valid;
+	%att.translate; 
+">
+<!ENTITY % attle.list "">
+
+<!ELEMENT list %cm.list;>
+<!ATTLIST list
+	%attl.list;
+	%attle.list;
+>
+]]>
+
+
+<!-- **** Element <listintro> **** -->
+
+<!ENTITY % csp.el.listintro "INCLUDE">
+<![%csp.el.listintro;[
+
+<!ENTITY % cm.listintro "
+	(%cmf.plaintext;)*
+">
+<!ENTITY % attl.listintro "
+	%att.nodeid;
+	%att.translate; 
+">
+<!ENTITY % attle.listintro "">
+
+<!ELEMENT listintro %cm.listintro;>
+<!ATTLIST listintro
+	%attl.listintro;
+	%attle.listintro;
+>
+]]>
+
+
+<!-- **** Element <lower-value> **** -->
+
+<!ENTITY % csp.el.lower-value "INCLUDE">
+<![%csp.el.lower-value;[
+
+<!ENTITY % cm.lower-value "
+	(%cmf.values;)*
+">
+<!ENTITY % attl.lower-value "
+	%att.nodeid;
+	%att.translate; 
+">
+<!ENTITY % attle.lower-value "">
+
+<!ELEMENT lower-value %cm.lower-value;>
+<!ATTLIST lower-value
+	%attl.lower-value;
+	%attle.lower-value;
+>
+]]>
+
+
+<!-- **** Element <lubrclass> **** -->
+
+<!ENTITY % csp.el.lubrclass "INCLUDE">
+<![%csp.el.lubrclass;[
+
+<!ENTITY % cm.lubrclass "
+	(%cmf.entrycontent;)*
+">
+<!ENTITY % attl.lubrclass "
+	%att.nodeid;
+	%att.translate; 
+">
+<!ENTITY % attle.lubrclass "">
+
+<!ELEMENT lubrclass %cm.lubrclass;>
+<!ATTLIST lubrclass
+	%attl.lubrclass;
+	%attle.lubrclass;
+>
+]]>
+
+
+<!-- **** Element <lubricant> **** -->
+
+<!ENTITY % csp.el.lubricant "INCLUDE">
+<![%csp.el.lubricant;[
+
+<!ENTITY % cm.lubricant "
+	(symbol?, name, identno?, medium?, spec?, lubrclass?, description?)
+">
+<!ENTITY % attl.lubricant "
+	%att.nodeid; 
+	%att.translate;
+	%att.valid;
+">
+<!ENTITY % attle.lubricant "">
+
+<!ELEMENT lubricant %cm.lubricant;>
+<!ATTLIST lubricant
+	%attl.lubricant;
+	%attle.lubricant;
+>
+]]>
+
+
+<!-- **** Element <lubricantinfo> **** -->
+
+<!ENTITY % csp.el.lubricantinfo "INCLUDE">
+<![%csp.el.lubricantinfo;[
+
+<!ENTITY % cm.lubricantinfo "
+	(quantity, lubricant)+
+">
+<!ENTITY % attl.lubricantinfo "
+	%att.nodeid; 
+	%att.translate;
+">
+<!ENTITY % attle.lubricantinfo "">
+
+<!ELEMENT lubricantinfo %cm.lubricantinfo;>
+<!ATTLIST lubricantinfo
+	%attl.lubricantinfo;
+	%attle.lubricantinfo;
+>
+]]>
+
+
+<!-- **** Element <medium> **** -->
+
+<!ENTITY % csp.el.medium "INCLUDE">
+<![%csp.el.medium;[
+
+<!ENTITY % cm.medium "
+	(%cmf.plaintext;)*
+">
+<!ENTITY % attl.medium "
+	%att.nodeid;
+	%att.translate; 
+">
+<!ENTITY % attle.medium "">
+
+<!ELEMENT medium %cm.medium;>
+<!ATTLIST medium
+	%attl.medium;
+	%attle.medium;
+>
+]]>
+
+
+<!-- **** Element <name> **** -->
+
+<!ENTITY % csp.el.name "INCLUDE">
+<![%csp.el.name;[
+
+<!ENTITY % cm.name "
+	(%cmf.plaintext;)*
+">
+<!ENTITY % attl.name "
+	%att.nodeid;
+	%att.translate; 
+">
+<!ENTITY % attle.name "">
+
+<!ELEMENT name %cm.name;>
+<!ATTLIST name
+	%attl.name;
+	%attle.name;
+>
+]]>
+
+
+<!-- **** Element <note> **** -->
+
+<!ENTITY % csp.el.note "INCLUDE">
+<![%csp.el.note;[
+
+<!ENTITY % cm.note "
+	(paragraph | list)+
+">
+<!ENTITY % attl.note "
+	%att.nodeid;
+	%att.translate; 
+	%att.valid;
+">
+<!ENTITY % attle.note "">
+
+<!ELEMENT note %cm.note;>
+<!ATTLIST note
+	%attl.note;
+	%attle.note;
+>
+]]>
+
+
+<!-- **** Element <number> **** -->
+
+<!ENTITY % csp.el.number "INCLUDE">
+<![%csp.el.number;[
+
+<!ENTITY % cm.number "
+	(%cmf.numberunit;)*
+">
+<!ENTITY % attl.number "
+	%att.print;
+	%att.nodeid;
+	%att.translate; 
+">
+<!ENTITY % attle.number "">
+
+<!ELEMENT number %cm.number;>
+<!ATTLIST number
+	%attl.number;
+	%attle.number;
+>
+]]>
+
+
+<!-- **** Element <or-action> **** -->
+
+<!ENTITY % csp.el.or-action "INCLUDE">
+<![%csp.el.or-action;[
+
+<!ENTITY % cm.or-action "
+	((note | safetyadvice | mediaobject)*, action, note*)
+">
+<!ENTITY % attl.or-action "
+	%att.nodeid;
+	%att.valid;
+	%att.translate;
+">
+<!ENTITY % attle.or-action "">
+
+<!ELEMENT or-action %cm.or-action;>
+<!ATTLIST or-action
+	%attl.or-action;
+	%attle.or-action;
+>
+]]>
+
+
+<!-- **** Element <orientation> **** -->
+
+<!ENTITY % csp.el.orientation "INCLUDE">
+<![%csp.el.orientation;[
+
+<!ENTITY % cm.orientation "
+	(%cmf.complexblock;)+
+">
+<!ENTITY % attl.orientation "
+	%att.nodeid;
+	%att.translate; 
+">
+<!ENTITY % attle.orientation "">
+
+<!ELEMENT orientation %cm.orientation;>
+<!ATTLIST orientation
+	%attl.orientation;
+	%attle.orientation;
+>
+]]>
+
+
+<!-- **** Element <outlook> **** -->
+
+<!ENTITY % csp.el.outlook "INCLUDE">
+<![%csp.el.outlook;[
+
+<!ENTITY % cm.outlook "
+	(heading?, (%cmf.complexblock;)+)
+">
+<!ENTITY % attl.outlook "
+	%att.nodeid;
+	%att.valid;
+	%att.translate;
+">
+<!ENTITY % attle.outlook "">
+
+<!ELEMENT outlook %cm.outlook;>
+<!ATTLIST outlook
+	%attl.outlook;
+	%attle.outlook;
+>
+]]>
+
+
+<!-- **** Element <paragraph> **** -->
+
+<!ENTITY % csp.el.paragraph "INCLUDE">
+<![%csp.el.paragraph;[
+
+<!ENTITY % cm.paragraph "
+	(%cmf.plaintext;)*
+">
+<!ENTITY % attl.paragraph "
+	%att.nodeid;
+	%att.valid; 
+	%att.translate;
+">
+<!ENTITY % attle.paragraph "">
+
+<!ELEMENT paragraph %cm.paragraph;>
+<!ATTLIST paragraph
+	%attl.paragraph;
+	%attle.paragraph;
+>
+]]>
+
+
+<!-- **** Element <part> **** -->
+
+<!ENTITY % csp.el.part "INCLUDE">
+<![%csp.el.part;[
+
+<!ENTITY % cm.part "
+	(symbol?, name, identno?, spec?, description?)
+">
+<!ENTITY % attl.part "
+	%att.nodeid; 
+	%att.translate;
+	%att.valid;
+">
+<!ENTITY % attle.part "">
+
+<!ELEMENT part %cm.part;>
+<!ATTLIST part
+	%attl.part;
+	%attle.part;
+>
+]]>
+
+
+<!-- **** Element <prerequisites> **** -->
+
+<!ENTITY % csp.el.prerequisites "INCLUDE">
+<![%csp.el.prerequisites;[
+
+<!ENTITY % cm.prerequisites "
+	(%cmf.complexblock;)+
+">
+<!ENTITY % attl.prerequisites "
+	%att.nodeid;
+	%att.translate;
+">
+<!ENTITY % attle.prerequisites "">
+
+<!ELEMENT prerequisites %cm.prerequisites;>
+<!ATTLIST prerequisites
+	%attl.prerequisites;
+	%attle.prerequisites;
+>
+]]>
+
+
+<!-- **** Element <problemdescription> **** -->
+
+<!ENTITY % csp.el.problemdescription "INCLUDE">
+<![%csp.el.problemdescription;[
+
+<!ENTITY % cm.problemdescription "
+	(%cmf.plaintext;)*
+">
+<!ENTITY % attl.problemdescription "
+	%att.nodeid;
+	%att.valid; 
+	%att.translate;
+">
+<!ENTITY % attle.problemdescription "">
+
+<!ELEMENT problemdescription %cm.problemdescription;>
+<!ATTLIST problemdescription
+	%attl.problemdescription;
+	%attle.problemdescription;
+>
+]]>
+
+
+<!-- **** Element <quantity> **** -->
+
+<!ENTITY % csp.el.quantity "INCLUDE">
+<![%csp.el.quantity;[
+
+<!ENTITY % cm.quantity "
+	(%cmf.simpledata;)
+">
+<!ENTITY % attl.quantity "
+	%atts.data;
+	%att.nodeid;
+	%att.translate; 
+">
+<!ENTITY % attle.quantity "">
+
+<!ELEMENT quantity %cm.quantity;>
+<!ATTLIST quantity
+	%attl.quantity;
+	%attle.quantity;
+>
+]]>
+
+
+<!-- **** Element <quoted> **** -->
+
+<!ENTITY % csp.el.quoted "INCLUDE">
+<![%csp.el.quoted;[
+
+<!ENTITY % cm.quoted "
+	(%cmf.justtext; | emphasis | subscript | superscript | %cmf.inlinemediaobjects; | %cmf.links; | inlinedata)*
+">
+<!ENTITY % attl.quoted "
+	%att.nodeid; 
+	%att.translate;
+">
+<!ENTITY % attle.quoted "">
+
+<!ELEMENT quoted %cm.quoted;>
+<!ATTLIST quoted
+	%attl.quoted;
+	%attle.quoted;
+>
+]]>
+
+
+<!-- **** Element <result> **** -->
+
+<!ENTITY % csp.el.result "INCLUDE">
+<![%csp.el.result;[
+
+<!ENTITY % cm.result "
+	(%cmf.complexblock;)*
+">
+<!ENTITY % attl.result "
+	%att.nodeid;
+	%att.valid; 
+	%att.translate;
+">
+<!ENTITY % attle.result "">
+
+<!ELEMENT result %cm.result;>
+<!ATTLIST result
+	%attl.result;
+	%attle.result;
+>
+]]>
+
+
+<!-- **** Element <safetyadvice> **** -->
+
+<!ENTITY % csp.el.safetyadvice "INCLUDE">
+<![%csp.el.safetyadvice;[
+
+<!ENTITY % cm.safetyadvice "
+	(cause, safetysymbol?, consequences* , action+, mediaobject?)
+">
+<!ENTITY % attl.safetyadvice "
+	%att.nodeid;
+	%att.class;
+	%att.valid; 
+	%att.translate;
+">
+<!ENTITY % attle.safetyadvice "">
+
+<!ELEMENT safetyadvice %cm.safetyadvice;>
+<!ATTLIST safetyadvice
+	%attl.safetyadvice;
+	%attle.safetyadvice;
+>
+]]>
+
+
+<!-- **** Element <shortinfo> **** -->
+
+<!ENTITY % csp.el.shortinfo "INCLUDE">
+<![%csp.el.shortinfo;[
+
+<!ENTITY % cm.shortinfo "
+	(%cmf.complexblock;)+
+">
+<!ENTITY % attl.shortinfo "
+	%att.nodeid; 
+	%att.translate;
+">
+<!ENTITY % attle.shortinfo "">
+
+<!ELEMENT shortinfo %cm.shortinfo;>
+<!ATTLIST shortinfo
+	%attl.shortinfo;
+	%attle.shortinfo;
+>
+]]>
+
+
+<!-- **** Element <si-value> **** -->
+
+<!ENTITY % csp.el.si-value "INCLUDE">
+<![%csp.el.si-value;[
+
+<!ENTITY % cm.si-value "
+	(number, unit)
+">
+<!ENTITY % attl.si-value "
+	%att.nodeid; 
+	%att.translate;
+">
+<!ENTITY % attle.si-value "">
+
+<!ELEMENT si-value %cm.si-value;>
+<!ATTLIST si-value
+	%attl.si-value;
+	%attle.si-value;
+>
+]]>
+
+
+<!-- **** Element <solution> **** -->
+
+<!ENTITY % csp.el.solution "INCLUDE">
+<![%csp.el.solution;[
+
+<!ENTITY % cm.solution "
+	(%cmf.plaintext;)*
+">
+<!ENTITY % attl.solution "
+	%att.nodeid;
+	%att.valid; 
+	%att.translate;
+">
+<!ENTITY % attle.solution "">
+
+<!ELEMENT solution %cm.solution;>
+<!ATTLIST solution
+	%attl.solution;
+	%attle.solution;
+>
+]]>
+
+
+<!-- **** Element <spec> **** -->
+
+<!ENTITY % csp.el.spec "INCLUDE">
+<![%csp.el.spec;[
+
+<!ENTITY % cm.spec "
+	(%cmf.plaintext;)*
+">
+<!ENTITY % attl.spec "
+	%att.nodeid; 
+	%att.translate;
+">
+<!ENTITY % attle.spec "">
+
+<!ELEMENT spec %cm.spec;>
+<!ATTLIST spec
+	%attl.spec;
+	%attle.spec;
+>
+]]>
+
+
+<!-- **** Element <step> **** -->
+
+<!ENTITY % csp.el.step "INCLUDE">
+<![%csp.el.step;[
+
+<!ENTITY % cm.step "
+	(%cmf.plaintext;)*
+">
+<!ENTITY % attl.step "
+	%att.nodeid; 
+	%att.translate;
+">
+<!ENTITY % attle.step "">
+
+<!ELEMENT step %cm.step;>
+<!ATTLIST step
+	%attl.step;
+	%attle.step;
+>
+]]>
+
+
+<!-- **** Element <subscript> **** -->
+
+<!ENTITY % csp.el.subscript "INCLUDE">
+<![%csp.el.subscript;[
+
+<!ENTITY % cm.subscript "
+	(%cmf.justtext;)*
+">
+<!ENTITY % attl.subscript "
+	%att.nodeid; 
+	%att.translate;
+">
+<!ENTITY % attle.subscript "">
+
+<!ELEMENT subscript %cm.subscript;>
+<!ATTLIST subscript
+	%attl.subscript;
+	%attle.subscript;
+>
+]]>
+
+
+<!-- **** Element <superscript> **** -->
+
+<!ENTITY % csp.el.superscript "INCLUDE">
+<![%csp.el.superscript;[
+
+<!ENTITY % cm.superscript "
+	(%cmf.justtext;)*
+">
+<!ENTITY % attl.superscript "
+	%att.nodeid; 
+	%att.translate;
+">
+<!ENTITY % attle.superscript "">
+
+<!ELEMENT superscript %cm.superscript;>
+<!ATTLIST superscript
+	%attl.superscript;
+	%attle.superscript;
+>
+]]>
+
+
+<!-- **** Element <symbol> **** -->
+
+<!ENTITY % csp.el.symbol "INCLUDE">
+<![%csp.el.symbol;[
+
+<!ENTITY % cm.symbol "
+	(%cmf.inlinemediaobjects;)
+">
+<!ENTITY % attl.symbol "
+	%att.nodeid; 
+">
+<!ENTITY % attle.symbol "">
+
+<!ELEMENT symbol %cm.symbol;>
+<!ATTLIST symbol
+	%attl.symbol;
+	%attle.symbol;
+>
+]]>
+
+
+<!-- **** Element <symptom> **** -->
+
+<!ENTITY % csp.el.symptom "INCLUDE">
+<![%csp.el.symptom;[
+
+<!ENTITY % cm.symptom "
+	(error-code?, description?)
+">
+<!ENTITY % attl.symptom "
+	%att.nodeid;
+	%att.translate;
+">
+<!ENTITY % attle.symptom "">
+
+<!ELEMENT symptom %cm.symptom;>
+<!ATTLIST symptom
+	%attl.symptom;
+	%attle.symptom;
+>
+]]>
+
+
+<!-- **** Element <taskinterval> **** -->
+
+<!ENTITY % csp.el.taskinterval "INCLUDE">
+<![%csp.el.taskinterval;[
+
+<!ENTITY % cm.taskinterval "
+	(%cmf.plaintext;)*
+">
+<!ENTITY % attl.taskinterval "
+	customer-interval %attv.customerinterval; #IMPLIED
+	service-interval %attv.serviceinterval; #IMPLIED
+	special-interval %attv.specialintervals; #IMPLIED
+	%att.nodeid; 
+	%att.translate;
+	%att.valid;
+">
+<!ENTITY % attle.taskinterval "">
+
+<!ELEMENT taskinterval %cm.taskinterval;>
+<!ATTLIST taskinterval
+	%attl.taskinterval;
+	%attle.taskinterval;
+>
+]]>
+
+
+<!-- **** Element <taskintervalinfo> **** -->
+
+<!ENTITY % csp.el.taskintervalinfo "INCLUDE">
+<![%csp.el.taskintervalinfo;[
+
+<!ENTITY % cm.taskintervalinfo "
+	(taskinterval)+
+">
+<!ENTITY % attl.taskintervalinfo "
+	%att.nodeid; 
+	%att.translate;
+">
+<!ENTITY % attle.taskintervalinfo "">
+
+<!ELEMENT taskintervalinfo %cm.taskintervalinfo;>
+<!ATTLIST taskintervalinfo
+	%attl.taskintervalinfo;
+	%attle.taskintervalinfo;
+>
+]]>
+
+
+<!-- **** Element <techdata> **** -->
+
+<!ENTITY % csp.el.techdata "INCLUDE">
+<![%csp.el.techdata;[
+
+<!ENTITY % cm.techdata "
+	(heading?, (techdata | data)+)
+">
+<!ENTITY % attl.techdata "
+	%att.nodeid; 
+	%att.translate;
+	%att.valid;
+">
+<!ENTITY % attle.techdata "">
+
+<!ELEMENT techdata %cm.techdata;>
+<!ATTLIST techdata
+	%attl.techdata;
+	%attle.techdata;
+>
+]]>
+
+
+<!-- **** Element <textdata> **** -->
+
+<!ENTITY % csp.el.textdata "INCLUDE">
+<![%csp.el.textdata;[
+
+<!ENTITY % cm.textdata "
+	(%cmf.justtext; | inlinedata | %cmf.links; | subscript | superscript)*
+">
+<!ENTITY % attl.textdata "
+	%att.nodeid; 
+	%att.translate;
+">
+<!ENTITY % attle.textdata "">
+
+<!ELEMENT textdata %cm.textdata;>
+<!ATTLIST textdata
+	%attl.textdata;
+	%attle.textdata;
+>
+]]>
+
+
+<!-- **** Element <link> **** -->
+
+<!ENTITY % csp.el.link "INCLUDE">
+<![%csp.el.link;[
+
+<!ENTITY % cm.link "
+	(%cmf.justtext; | %cmf.inlinemediaobjects; | transno | subscript | superscript | quoted | inlinedata | %cmf.variables;)*
+">
+<!ENTITY % attl.link "
+	%atts.link;
+	%att.nodeid;
+	%att.translate;
+">
+<!ENTITY % attle.link "">
+
+<!ELEMENT link %cm.link;>
+<!ATTLIST link
+	%attl.link;
+	%attle.link;
+>
+]]>
+
+
+<!-- **** Element <tolerance-asymmetric-value> **** -->
+
+<!ENTITY % csp.el.tolerance-asymmetric-value "INCLUDE">
+<![%csp.el.tolerance-asymmetric-value;[
+
+<!ENTITY % cm.tolerance-asymmetric-value "
+	((tolerance-high-value, tolerance-low-value?) | tolerance-low-value)
+">
+<!ENTITY % attl.tolerance-asymmetric-value "
+	%att.nodeid; 
+	%att.translate;
+">
+<!ENTITY % attle.tolerance-asymmetric-value "">
+
+<!ELEMENT tolerance-asymmetric-value %cm.tolerance-asymmetric-value;>
+<!ATTLIST tolerance-asymmetric-value
+	%attl.tolerance-asymmetric-value;
+	%attle.tolerance-asymmetric-value;
+>
+]]>
+
+
+<!-- **** Element <tolerance-high-value> **** -->
+
+<!ENTITY % csp.el.tolerance-high-value "INCLUDE">
+<![%csp.el.tolerance-high-value;[
+
+<!ENTITY % cm.tolerance-high-value "
+	(%cmf.values;)
+">
+<!ENTITY % attl.tolerance-high-value "
+	%att.nodeid; 
+	%att.translate;
+">
+<!ENTITY % attle.tolerance-high-value "">
+
+<!ELEMENT tolerance-high-value %cm.tolerance-high-value;>
+<!ATTLIST tolerance-high-value
+	%attl.tolerance-high-value;
+	%attle.tolerance-high-value;
+>
+]]>
+
+
+<!-- **** Element <tolerance-low-value> **** -->
+
+<!ENTITY % csp.el.tolerance-low-value "INCLUDE">
+<![%csp.el.tolerance-low-value;[
+
+<!ENTITY % cm.tolerance-low-value "
+	(%cmf.values;)
+">
+<!ENTITY % attl.tolerance-low-value "
+	%att.nodeid; 
+	%att.translate;
+">
+<!ENTITY % attle.tolerance-low-value "">
+
+<!ELEMENT tolerance-low-value %cm.tolerance-low-value;>
+<!ATTLIST tolerance-low-value
+	%attl.tolerance-low-value;
+	%attle.tolerance-low-value;
+>
+]]>
+
+
+<!-- **** Element <tolerance-symmetric-value> **** -->
+
+<!ENTITY % csp.el.tolerance-symmetric-value "INCLUDE">
+<![%csp.el.tolerance-symmetric-value;[
+
+<!ENTITY % cm.tolerance-symmetric-value "
+	(%cmf.values;)
+">
+<!ENTITY % attl.tolerance-symmetric-value "
+	%att.nodeid; 
+	%att.translate;
+">
+<!ENTITY % attle.tolerance-symmetric-value "">
+
+<!ELEMENT tolerance-symmetric-value %cm.tolerance-symmetric-value;>
+<!ATTLIST tolerance-symmetric-value
+	%attl.tolerance-symmetric-value;
+	%attle.tolerance-symmetric-value;
+>
+]]>
+
+
+<!-- **** Element <tool> **** -->
+
+<!ENTITY % csp.el.tool "INCLUDE">
+<![%csp.el.tool;[
+
+<!ENTITY % cm.tool "
+	(symbol?, name, identno?, spec?, description?)
+">
+<!ENTITY % attl.tool "
+	%att.nodeid; 
+	%att.translate;
+	%att.valid;
+">
+<!ENTITY % attle.tool "">
+
+<!ELEMENT tool %cm.tool;>
+<!ATTLIST tool
+	%attl.tool;
+	%attle.tool;
+>
+]]>
+
+
+<!-- **** Element <toolinfo> **** -->
+
+<!ENTITY % csp.el.toolinfo "INCLUDE">
+<![%csp.el.toolinfo;[
+
+<!ENTITY % cm.toolinfo "
+	(quantity, (tool | part))+
+">
+<!ENTITY % attl.toolinfo "
+	%att.nodeid; 
+	%att.translate;
+">
+<!ENTITY % attle.toolinfo "">
+
+<!ELEMENT toolinfo %cm.toolinfo;>
+<!ATTLIST toolinfo
+	%attl.toolinfo;
+	%attle.toolinfo;
+>
+]]>
+
+
+<!-- **** Element <transno> **** -->
+
+<!ENTITY % csp.el.transno "INCLUDE">
+<![%csp.el.transno;[
+
+<!ENTITY % cm.transno "
+	(%cmf.justtext; | %cmf.typography; | %cmf.links;)*
+">
+<!ENTITY % attl.transno "
+	%att.nodeid; 
+	%att.translate;
+">
+<!ENTITY % attle.transno "">
+
+<!ELEMENT transno %cm.transno;>
+<!ATTLIST transno
+	%attl.transno;
+	%attle.transno;
+>
+]]>
+
+
+<!-- **** Element <troubleshooting> **** -->
+
+<!ENTITY % csp.el.troubleshooting "INCLUDE">
+<![%csp.el.troubleshooting;[
+
+<!ENTITY % cm.troubleshooting "
+	(identification, (problemdescription*, (mediaobject?, action)+)+)
+">
+<!ENTITY % attl.troubleshooting "
+	%att.nodeid;
+	%att.valid; 
+	%att.translate;
+">
+<!ENTITY % attle.troubleshooting "">
+
+<!ELEMENT troubleshooting %cm.troubleshooting;>
+<!ATTLIST troubleshooting
+	%attl.troubleshooting;
+	%attle.troubleshooting;
+>
+]]>
+
+
+<!-- **** Element <user-interface> **** -->
+
+<!ENTITY % csp.el.user-interface "INCLUDE">
+<![%csp.el.user-interface;[
+
+<!ENTITY % cm.user-interface "
+	(%cmf.justtext; | %cmf.inlinemediaobjects; | %cmf.links; | subscript | superscript | transno)*
+">
+<!ENTITY % attl.user-interface "
+	%att.nodeid;
+	type %attv.userinterface; #IMPLIED 
+	%att.translate;
+">
+<!ENTITY % attle.user-interface "">
+
+<!ELEMENT user-interface %cm.user-interface;>
+<!ATTLIST user-interface
+	%attl.user-interface;
+	%attle.user-interface;
+>
+]]>
+
+
+<!-- **** Element <variable> **** -->
+
+<!ENTITY % csp.el.variable "INCLUDE">
+<![%csp.el.variable;[
+
+<!ENTITY % cm.variable "
+	(%cmf.justtext; | %cmf.typography;)*
+">
+<!ENTITY % attl.variable "
+	%att.nodeid;
+	name CDATA #REQUIRED 
+	%att.translate;
+">
+<!ENTITY % attle.variable "">
+
+<!ELEMENT variable %cm.variable;>
+<!ATTLIST variable
+	%attl.variable;
+	%attle.variable;
+>
+]]>
+
+
+<!-- **** Element <unit> **** -->
+
+<!ENTITY % csp.el.unit "INCLUDE">
+<![%csp.el.unit;[
+
+<!ENTITY % cm.unit "
+	(%cmf.numberunit;)*
+">
+<!ENTITY % attl.unit "
+	%att.print;
+	%att.nodeid; 
+	%att.translate;
+">
+<!ENTITY % attle.unit "">
+
+<!ELEMENT unit %cm.unit;>
+<!ATTLIST unit
+	%attl.unit;
+	%attle.unit;
+>
+]]>
+
+
+<!-- **** Element <upper-value> **** -->
+
+<!ENTITY % csp.el.upper-value "INCLUDE">
+<![%csp.el.upper-value;[
+
+<!ENTITY % cm.upper-value "
+	(%cmf.values;)*
+">
+<!ENTITY % attl.upper-value "
+	%att.nodeid; 
+	%att.translate;
+">
+<!ENTITY % attle.upper-value "">
+
+<!ELEMENT upper-value %cm.upper-value;>
+<!ATTLIST upper-value
+	%attl.upper-value;
+	%attle.upper-value;
+>
+]]>
+
+
+<!-- **** Element <us-value> **** -->
+
+<!ENTITY % csp.el.us-value "INCLUDE">
+<![%csp.el.us-value;[
+
+<!ENTITY % cm.us-value "
+	(number, unit)
+">
+<!ENTITY % attl.us-value "
+	%att.nodeid; 
+	%att.translate;
+">
+<!ENTITY % attle.us-value "">
+
+<!ELEMENT us-value %cm.us-value;>
+<!ATTLIST us-value
+	%attl.us-value;
+	%attle.us-value;
+>
+]]>
+
+<!-- ************** End of DTD module "finestruct-elems.ent" *************** -->

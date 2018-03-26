@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ***************************************************************************
+
+PI-Mod V1.2.2 - DTD Module "contmodel-ents.ent"
+
+********************************************************************************
+
+DTD module declares content model fragments of PI-Mod DTD as parameter entities.
+
+Public Identifier:
+
+    "-//PI-MOD//ENTITIES Content Model Entities V1.2.2//EN"
+
+Typical invocation:
+
+	<!ENTITY % contmodel-ents
+		PUBLIC "-//PI-MOD//ENTITIES Content Model Entities V1.2.2//EN"
+		"contmodel-ents.ent"
+	>
+	%contmodel-ents;
+
+********************************************************************************
+
+Copyright (C) 2011, The PI-Mod Project
+
+Contributors to the The PI-Mod Project (V1.2.2): 
+ 	 Wolfgang Ziegler 
+ 	 Stephan Steurer 
+ 	 Claudia Oberle
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+
+********************************************************************************
+
+Naming conventions for parameter entities:
+
+	cmf.ELEMENTGROUP	content model fragment: collects similar 
+				elements in group ELEMENTGROUP
+	cm.ELEMENT		content model: complete content model of element
+				ELEMENT
+	att.ATTRIBUTE		attribute: declaration of single attribute
+				ATTRIBUTE (with Name Type Default)
+	attv.ATTRIBUTE		attribute value enumeration: enumeration of
+				predefined values for Attribute ATTRIBUTE
+	atts.ATTRIBUTEGROUP	attribute sublist: collects attributes, which 
+				belong together, in group ATTRIBUTEGROUP
+	attl.ELEMENT		attribute list: complete attribute list of
+				element ELEMENT
+	attle.ELEMENT		attribute list extension: extension point for
+				additonial project specific attributes of
+				element ELEMENT; is always empty string in
+				PI-Mod Core DTD modules
+	csp.			conditional section parameter: conditional 
+				section for ... (see below), which can be
+				enabled (INCLUDE) or disabled (IGNORE)
+	csp.el.ELEMENT		... element: element declaration and
+				corresponding attribute declration of Element
+				ELEMENT
+	csp.es.ENTITY-SET	... entity set: declaration and call of 
+				parameter entity of entity set ENTITY-SET
+
+**************************************************************************** -->
+
+<!-- *********************** Content model fragments *********************** -->
+
+<!ENTITY % cmf.justtext "
+	#PCDATA
+">
+<!ENTITY % cmf.typography "
+	emphasis | quoted | subscript | superscript
+">
+<!ENTITY % cmf.links "
+	link
+">
+<!ENTITY % cmf.inlinemediaobjects "
+	inlinemediaobject
+">
+<!ENTITY % cmf.variables "
+	variable
+">
+<!ENTITY % cmf.inlinesemantics "
+	inlinedata | transno | user-interface
+">
+<!ENTITY % cmf.plaintext "
+	%cmf.justtext; | %cmf.inlinemediaobjects; | %cmf.inlinesemantics; | %cmf.links; | %cmf.typography; | %cmf.variables; 
+">
+<!ENTITY % cmf.entrycontent "
+	%cmf.plaintext; | lower-value | upper-value | tolerance-asymmetric-value | tolerance-symmetric-value | mediaobject
+">
+<!ENTITY % cmf.simpleblock "
+	footnote | keyword | list | paragraph | techdata
+">
+<!ENTITY % cmf.standardblock "
+  %cmf.simpleblock; | mediaobject | note | table
+">
+<!ENTITY % cmf.complexblock "
+	%cmf.standardblock; | safetyadvice
+">
+<!ENTITY % cmf.simpledata "
+	si-value?, us-value?
+">
+<!ENTITY % cmf.numberunit "
+	%cmf.justtext; | %cmf.links; | subscript | superscript
+">
+<!ENTITY % cmf.titletext "
+	%cmf.justtext; | keyword | %cmf.inlinemediaobjects; | %cmf.inlinesemantics; | quoted | subscript | superscript | %cmf.links;
+">
+<!ENTITY % cmf.values "
+	si-value | us-value
+">
+
+<!-- *************************** Content models **************************** -->
+
+<!ENTITY % cm.table "
+	(keyword*, tgroup+, caption?, footnote*)
+">
+<!ENTITY % cm.entry "
+	(%cmf.simpleblock;)*
+">
+
+<!-- *************** End of DTD module "contmodel-ents.ent" **************** -->

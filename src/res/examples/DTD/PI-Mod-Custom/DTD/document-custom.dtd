@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ***************************************************************************
+
+Customized PI-Mod V1.2.0 - DTD "document-pimod-standard.dtd"
+
+********************************************************************************
+
+DTD refers needed DTD core and custom modules as external entities for PI-Mod Standard.
+
+Public Identifier:
+
+	"-//PI-MOD-STANDARD//DTD Document V1.2.0//EN"
+
+Typical invocation:
+
+	<!DOCTYPE document
+		PUBLIC "-//PI-MOD-STANDARD//DTD Document V1.2.0//EN"
+		"document-pimod-standard.dtd"
+	>
+
+********************************************************************************
+
+Copyright (C) 2011, The PI-Mod Project
+
+Contributors to the The PI-Mod Project (V1.2.2): 
+ 	 Wolfgang Ziegler 
+ 	 Stephan Steurer 
+ 	 Claudia Oberle
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+
+********************************************************************************
+
+Naming conventions for parameter entities:
+
+	cmf.ELEMENTGROUP	content model fragment: collects similar 
+				elements in group ELEMENTGROUP
+	cm.ELEMENT		content model: complete content model of element
+				ELEMENT
+	att.ATTRIBUTE		attribute: declaration of single attribute
+				ATTRIBUTE (with Name Type Default)
+	attv.ATTRIBUTE		attribute value enumeration: enumeration of
+				predefined values for Attribute ATTRIBUTE
+	atts.ATTRIBUTEGROUP	attribute sublist: collects attributes, which 
+				belong together, in group ATTRIBUTEGROUP
+	attl.ELEMENT		attribute list: complete attribute list of
+				element ELEMENT
+	attle.ELEMENT		attribute list extension: extension point for
+				additonial project specific attributes of
+				element ELEMENT; is always empty string in
+				PI-Mod Core DTD modules
+	csp.			conditional section parameter: conditional 
+				section for ... (see below), which can be
+				enabled (INCLUDE) or disabled (IGNORE)
+	csp.el.ELEMENT		... element: element declaration and
+				corresponding attribute declration of Element
+				ELEMENT
+	csp.es.ENTITY-SET	... entity set: declaration and call of 
+				parameter entity of entity set ENTITY-SET
+
+**************************************************************************** -->
+
+<!-- ********* Inclusion of customized PI-Mod parameter entities *********** -->
+
+<!ENTITY % document-ents
+    PUBLIC "-//PI-MOD-STANDARD//ENTITIES Document Entities Customized PI-Mod V1.2.0//EN"
+    "document-ents.ent"
+>
+%document-ents;
+
+<!ENTITY % localset-ents
+    PUBLIC "-//PI-MOD-STANDARD//ENTITIES Customized PI-Mod V1.2.0//EN"
+    "localset-ents.ent"
+>
+%localset-ents;
+
+
+<!-- ******************* Inclusion of DTD core modules ********************* -->
+
+<!ENTITY % attribute-ents
+    PUBLIC "-//PI-MOD//ENTITIES Attribute Entities V1.2.2//EN"
+    "../../PI-Mod-Core/DTD/attribute-ents.ent"
+>
+%attribute-ents;
+
+<!ENTITY % contmodel-ents
+    PUBLIC "-//PI-MOD//ENTITIES Content Model Entities V1.2.2//EN"
+    "../../PI-Mod-Core/DTD/contmodel-ents.ent"
+>
+%contmodel-ents;
+
+<!ENTITY % modtypes-elems
+    PUBLIC "-//PI-MOD//ELEMENTS Module Types V1.2.2//EN"
+    "../../PI-Mod-Core/DTD/modtypes-elems.ent"
+>
+%modtypes-elems;
+
+<!ENTITY % finestruct-elems
+    PUBLIC "-//PI-MOD//ELEMENTS Fine Structure V1.2.2//EN"
+    "../../PI-Mod-Core/DTD/finestruct-elems.ent"
+>
+%finestruct-elems;
+
+<!ENTITY % char-ent-sets
+    PUBLIC "-//PI-MOD//ENTITIES Character Entity Sets V1.2.2//EN"
+    "../../PI-Mod-Core/DTD/char-ent-sets.ent"
+>
+%char-ent-sets;
+
+
+<!-- ************* Inclusion of customized PI-Mod element types ************ -->
+
+<!ENTITY % localset-elems
+    PUBLIC "-//PI-MOD-STANDARD//ELEMENTS Customized PI-Mod V1.2.0//EN"
+    "localset-elems.ent"
+>
+%localset-elems;
+
+<!ENTITY % document-elems
+    PUBLIC "-//PI-MOD-STANDARD//ELEMENTS Customized PI-Mod V1.2.0//EN"
+    "document-elems.ent"
+>
+%document-elems;
+
+
+<!-- ************************ End of DTD "document-pimod-standard.dtd" ************************* -->

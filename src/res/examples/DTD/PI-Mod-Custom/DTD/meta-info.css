@@ -1,0 +1,140 @@
+/* XMetaL styles */
+/*
+  *******************************************************************************
+  * RevisionInformation:
+  * $LastChangedRevision: 1970 $
+  * $LastChangedDate: 2009-08-17 12:06:40 +0200 (Mo, 17 Aug 2009) $
+  *******************************************************************************
+ */
+
+
+
+/*** ========================================================================================= ***/
+filter-set {
+  background-color : #EFEFEF;
+  display : block;
+  margin-bottom : 15px;
+  padding : 3px;
+}
+filter-set:before {
+  background-color : #AFAFAF;
+  color : #ECECEC;
+  content : "Varianteneigenschaften";
+  display:block;
+  font-size : 125%;
+  font-weight : bold;
+  margin-left : 0mm;
+  margin-right : 0px;
+  padding : 3px;
+}
+filter {
+  display : block;
+  color: #000000;
+  padding-left: 10px;
+  margin-bottom: 3px;
+}
+filter:before
+{
+  font-weight : bold;
+  color : #4682B4;
+  content: "Filterkriterium: ";
+}
+filter:after
+{
+  font-weight : normal;
+  color : #000000;
+  content: attr(filterclass) " = '" attr(value) "'";
+}
+
+meta-info {
+  background-color : #EFEFEF;
+  display : block;
+  margin-bottom : 15px;
+  padding : 3px;
+}
+meta-info:before {
+  background-color : #B0C4DE;
+  color : #ECECEC;
+  content : "Dokument-Metadaten";
+  display:block;
+  font-size : 150%;
+  font-weight : bold;
+  margin-left : 0mm;
+  margin-right : 0px;
+  padding : 3px;
+}
+meta-info>* {
+  display : block;
+  color: #000000;
+  padding-left: 10px;
+  margin-bottom: 3px;
+}
+meta-info>*:before
+{
+  font-weight : bold;
+  color : #4682B4;
+}
+meta-info>*>* {
+  display : block;
+  color: #000000;
+  font-weight : bold;
+  padding-left: 15px;
+  margin-bottom: 3px;
+}
+docudata:before {
+  content : "Dokument-Metadaten: ";
+}
+docutype:before {
+  content : "Dokumentart: ";
+}
+docutype[docutype="Sonstiges"]:after {
+  content : "";
+}
+docutype:after {
+  content : attr(docutype);
+  font-weight : normal;
+}
+
+variable-set {
+  background-color : #EFEFEF;
+  display : block;
+  margin-bottom : 15px;
+  padding : 3px;
+}
+variable-set:before {
+  background-color : #AFAFAF;
+  color : #ECECEC;
+  content : "Variablendefinitionen";
+  display:block;
+  font-size : 125%;
+  font-weight : bold;
+  margin-left : 0mm;
+  margin-right : 0px;
+  padding : 3px;
+}
+variable {
+  display : block;
+  color: #000000;
+  padding-left: 10px;
+  margin-bottom: 3px;
+}
+variable:before
+{
+  font-weight : bold;
+  color : #4682B4;
+  content: "Variable: ";
+}
+variable:after
+{
+  font-weight : normal;
+  color : #808080;
+  content: " [ " attr(name) " ]";
+}
+/*
+variable-set>variable:after
+{
+  font-weight : normal;
+  color : #000000;
+  content: "";
+}
+*/

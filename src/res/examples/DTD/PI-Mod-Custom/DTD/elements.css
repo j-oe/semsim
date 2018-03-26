@@ -1,0 +1,647 @@
+/* XMetaL styles */
+/*
+  *******************************************************************************
+  * RevisionInformation:
+  * $LastChangedRevision: 1970 $
+  * $LastChangedDate: 2009-08-17 12:06:40 +0200 (Mo, 17 Aug 2009) $
+  *******************************************************************************
+ */
+
+
+
+/*** ========================================================================================= ***/
+action {
+    display:     block;
+}
+actiondescription {
+    display:     block;
+    margin-top: 3pt;
+}
+actionsequenceend {
+    display:     block;
+}
+caption {
+    display:     block;
+    font-size:   85%;
+}
+cause {
+    display:     block;
+}
+mediaobject>caption:before {
+    content: 'Abbildung ' counter(mediaobjectcaption) ': ';
+    font-weight: bold;
+}
+mediaobject>caption {
+    counter-increment: mediaobjectcaption;
+    margin-bottom: 3pt;
+    margin-left: 8pt;
+}
+table>caption:before {
+    content: 'Tabelle ' counter(tablecaption) ': ';
+    font-weight: bold;
+}
+table>caption {
+    counter-increment: tablecaption;
+    margin-bottom: 3pt;
+    margin-left: 8pt;
+    margin-top: 3pt;
+}
+cause {
+    display: block;
+    font-weight:bold;
+    margin-top: 8pt;
+    margin-bottom: 3pt;
+}
+errordescription>cause:before {
+    content: 'Art und Ursache:\0B';
+    color: rgb(175, 175, 175);
+}
+errordescription>cause {
+    margin: 0;
+    font-weight: normal;
+}
+condition {
+    display: block;
+    font-style: italic;
+    margin-top: 3pt;
+}
+consequences {
+    display: block;
+    margin-bottom: 3pt;
+}
+data:before {
+   content: url(icons/li_data.png);
+}
+data {
+   display: block;
+   padding-left: 22pt;
+}
+datatype {
+    display: inline;
+    font-weight: bold;
+}
+diagnosisinfo:before {
+    content: "Fehlersuche und -behebung:\0B";
+    color: rgb(175, 175, 175);
+    font-weight: bold;
+}
+diagnosisinfo,
+partinfo,
+toolinfo {
+    display: block;
+    margin-top: 8pt;
+    margin-bottom: 8pt;
+}
+description:before {
+    content: 'Beschreibung:\0B';
+    color: rgb(175, 175, 175);
+}
+description {
+    display: block;
+    font-style: italic;
+}
+part>description,
+tool>description {
+  margin-left: 14pt;
+  padding-left: 8pt;
+}
+emphasis {
+    font-weight: bold;
+}
+entry {
+    display: block;
+    font-size: 85%;
+    padding: 3pt;
+}
+thead>row>entry {
+    display: block;
+    font-weight: bold;
+    background-color: rgb(225,225,225);
+    color: rgb(75,75,75);
+}
+tfoot>row>entry {
+    display: block;
+    font-weight: bold;
+    background-color: rgb(225,225,225);
+    color: rgb(75,75,75);
+}
+error-code {
+   display: inline;
+   font-weight: bold;
+}
+errordescription:before {
+   content: url(icons/li_errordescription.png);
+}
+errordescription {
+   display: block;
+   margin-top: 5pt;
+   padding-left: 22pt;
+}
+footnote:before {
+    content: 'Fuï¿½note:\0B';
+    color: rgb(175, 175, 175);
+}
+footnote {
+  display: block;
+  margin-bottom: 5pt;
+}
+glossary-entry:before {
+   content: url(icons/li_glossary-entry.png);
+}
+glossary-entry {
+  display: block;
+  margin-left: 8pt;
+  margin-top: 8pt;
+}
+glossdef {
+  display: block;
+  margin-left: 16pt;
+}
+glossterm {
+  display: inline;
+  font-weight: bold;
+}
+identification {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 3pt;
+    margin-top: 8pt;
+}
+identno:before {
+    content: 'Sachnummer:\0B';
+    color: rgb(175, 175, 175);
+}
+identno {
+    display: block;
+}
+part>identno,
+tool>identno {
+  margin-left: 14pt;
+  padding-left: 8pt;
+}
+image {
+    border: #808080 0.5pt solid;
+    display: block;
+    padding: 8pt;
+    margin-bottom: 3pt;
+}
+inline-data {
+    display: inline;  
+}
+inlinemediaobject {
+    display: inline;
+}
+item {
+    margin: 0pt 0pt 0pt 14pt;
+    padding-left: 8pt;
+    display: list-item;
+    font-style: normal;
+}
+item>paragraph {
+    margin: 1.5pt;
+}
+item>paragraph\paragraph {
+    margin: 0pt;
+}
+itemno {
+  display: block;
+  font-weight: bold;
+  margin-top: 3pt;
+}
+itemtext {
+  display: block;
+}
+key-entry:before {
+    content: '[ ';
+    color: rgb(175, 175, 175);
+    font-style: normal;
+}
+key-entry {
+  display: inline;
+}
+key-entry+key-entry:before {
+    content: ' | ';
+    color: rgb(175, 175, 175);
+	  font-style: normal;
+}
+key-entry+key-entry {
+  font-style: italic;
+}
+key-entry+key-entry:after {
+    content: ' ]';
+    color: rgb(175, 175, 175);
+    font-style: normal;
+}
+keyword:before {
+    content: 'Stichwort-Eintrag:\0B';
+    color: rgb(175, 175, 175);
+}
+keyword {
+  display: block;
+  margin-bottom: 5pt;
+}
+legend:before {
+    color: rgb(175, 175, 175);
+	  content: 'Legende: ';
+	  font-weight: bold;
+}
+legend {
+	  display: block;
+    margin-bottom: 8pt;
+    margin-left: 8pt;
+}
+legenditem {
+    display: block;
+    margin-left: 10pt;
+}
+link:before {
+    content: '[ ';
+    color: rgb(175, 175, 175);
+    text-decoration: none;
+}
+link {
+	color: #4682B4;
+  display: inline;
+  text-decoration: underline;
+}
+link:after {
+    content: ' ]';
+    color: rgb(175, 175, 175);
+    text-decoration: none;
+}
+list {
+    display: block;
+    margin-top:    5pt;
+    margin-bottom: 5pt;
+}
+list[listtype='marked'] {
+    list-style-type: disc;
+}
+list[listtype='numbered'] {
+    list-style-type: decimal;
+}
+prerequisites>list[listtype='marked'] {
+    list-style-type: none;
+}
+listintro {
+    display: block;
+    margin-bottom: 2.5pt;
+}
+lubrclass:before {
+    content: 'Klassifikation:\0B';
+    color: rgb(175, 175, 175);
+}
+lubrclass {
+    display: block;
+}
+lubricant:before {
+   content: url(icons/li_lubricant.png);
+}
+lubricant {
+   display: block;
+   padding-left: 22pt;
+   margin-top: 8pt;
+}
+lubricantinfo>lubricant {
+   margin-top: 0pt;
+}
+lubricantinfo:before {
+    content: "Schmier- und Betriebsmittel:\0B";
+    color: rgb(175, 175, 175);
+    font-weight: bold;
+}
+lubricantinfo {
+    display: block;
+    margin-top: 8pt;
+    margin-bottom: 8pt;
+}
+lubricant>name,
+part>name,
+tool>name {
+   font-weight: bold;
+}
+mediaobject {
+    display: block;
+    margin-bottom: 8pt;
+    margin-top: 8pt;
+}
+mediaobject {
+    display: block;
+    margin-bottom: 8pt;
+    margin-top: 8pt;
+}
+medium:before {
+    content: 'Bezeichnung:\0B';
+    color: rgb(175, 175, 175);
+}
+medium {
+    display: block;
+}
+name {
+    display: inline;
+}
+/*
+part>name {
+   see 'lubricant>name'
+}
+*/
+note:before {
+    content: url(icons/note.png);
+}
+note,
+safetyadvice,
+troubleshooting {
+    background-color: rgb(245,245,245);
+    display: block;
+    margin-top: 5mm;
+    margin-bottom: 5mm;
+    border: solid 1pt rgb(175, 175, 175);
+    padding: 5pt;
+}
+number {
+    display: inline;
+}
+or-action {
+  display: block;
+  margin-left: 15px;
+}
+orientation:before {
+    content: 'Orientierung: ';
+    color: rgb(175, 175, 175);
+    font-weight: bold;
+}
+orientation {
+    display: block;
+}
+outlook:before {
+    content: 'Ausblick: ';
+    color: rgb(175, 175, 175);
+    font-weight: bold;
+}
+outlook {
+    display: block;
+}
+paragraph {
+    display: block;
+    margin-bottom: 5pt;
+    text-align: left;
+}
+actiondescription>paragraph {
+    margin-bottom: 2.5pt;
+}
+glossdef>paragraph {
+    margin-bottom: 2.5pt;
+}
+prerequisites>list>item>paragraph:first-child:before {
+    content: "\2713\0B";
+}
+result>paragraph:before {
+    content: '\21D2\0B';
+}
+part:before,
+tool:before {
+   content: url(icons/li_tool.png);
+}
+part,
+tool {
+   display: block;
+   margin-left: 8pt;
+   margin-top: 8pt;
+   padding-left: 14pt;
+}
+toolinfo>part,
+toolinfo>tool {
+   margin-top: 0pt;
+}
+problemdescription {
+    display: block;
+    margin-bottom: 3pt;
+}
+prerequisites {
+    display: block;
+}
+prerequisites:before {
+    content: 'Voraussetzungen:\0B';
+    color: rgb(175, 175, 175);
+    font-weight: bold;
+}
+quantity {
+  display: block;
+}
+lubricantinfo>quantity,
+toolinfo>quantity {
+  margin-left: 14pt;
+  margin-top: 5pt;
+  padding-left: 24pt;
+}
+quoted:before {
+    content: "\201E";
+}
+quoted {
+    display: inline;
+}
+quoted:after {
+    content: "\201C";
+}
+result {
+    display: block;
+    margin-left: 10pt;
+}
+actionsequenceend>result {
+    margin-left: 0pt;
+}
+/*
+safetyadvice {
+  see 'note'
+}
+*/
+safetyadvice[class='danger']:before {
+    content:url(icons/danger_de.png);
+}
+safetyadvice[class='warning']:before {
+    content:url(icons/warning_de.png);
+}
+safetyadvice[class='caution']:before {
+    content:url(icons/caution_de.png);
+}
+safetyadvice[class='notice']:before {
+    content:url(icons/notice_de.png);
+}
+safetysymbol {
+    display: block;
+    margin-bottom: 3pt;
+    margin-top: 3pt;
+}
+shortinfo:before {
+    content: 'Kurzbeschreibung: ';
+    color: rgb(175, 175, 175);
+    font-weight: bold;
+}
+shortinfo {
+    display: block;
+}
+si-value {
+    display: inline;
+}
+data>si-value:before {
+    content: "Wert (numerisch, metrisch):\0B";
+    color: rgb(175, 175, 175);
+}
+data>si-value {
+	  display: block;
+    margin-left: 22pt;
+}
+solution:before {
+    content: 'Behebungslösung:\0B';
+    color: rgb(175, 175, 175);
+}
+solution {
+    display: block;
+}
+spec:before {
+    content: 'Spezifikation:\0B';
+    color: rgb(175, 175, 175);
+}
+spec {
+    display: block;
+    font-style: italic;
+}
+part>spec,
+tool>spec {
+  margin-left: 14pt;
+  padding-left: 8pt;
+}
+step:before {
+    color: #808080;
+    content: "\25B6\0B";
+}
+or-action>action>step:before {
+    color: #808080;
+    content: "\25B7\0B";
+}
+step {
+    display: block;
+}
+subscript {
+    font-size : 66%;
+    vertical-align : sub;
+    display : inline;
+}
+superscript {
+    font-size : 66%;
+    vertical-align : super;
+    display : inline;
+}
+symbol:before {
+  content: "\0B";
+}
+symbol {
+  display: inline;
+}
+symbol:after {
+  content: "\0B";
+}
+symptoml {
+  display: block;
+}
+table {
+    display: block;
+    margin-bottom: 8pt;
+    margin-top: 8pt;
+}
+taskinterval:before {
+   content: url(icons/li_taskinterval.png);
+}
+taskinterval {
+   display: block;
+   padding-left: 22pt;
+}
+taskintervalinfo:before {
+    content: "Wartungstï¿½tigkeiten:\0B";
+    color: rgb(175, 175, 175);
+    font-weight: bold;
+}
+taskintervalinfo {
+    display: block;
+    margin-top: 8pt;
+    margin-bottom: 8pt;
+}
+techdata {
+    display: block;
+    margin-top: 8pt;
+    margin-bottom: 8pt;
+    border: solid 1pt rgb(175, 175, 175);
+    padding: 3pt;
+}
+techdata:before {
+    content: "Technische Daten: " '\2028';
+    color: rgb(175, 175, 175);
+    font-weight: bold;
+}
+textdata {
+    display: inline;
+}
+data>textdata:before {
+    content: "Wert (nicht-numerisch):\0B";
+    color: rgb(175, 175, 175);
+}
+data>textdata {
+    display: block;
+    margin-left: 22pt;
+}
+/*
+tool:before {
+  siehe part:before
+}
+tool {
+  siehe part
+}
+*/
+toolinfo:before {
+    content: "Benï¿½tigte Werkzeuge und Materialien:\0B";
+    color: rgb(175, 175, 175);
+    font-weight: bold;
+}
+toolinfo {
+    display: block;
+    margin-top: 8pt;
+    margin-bottom: 8pt;
+}
+transno {
+    display: inline;
+}
+troubleshooting:before {
+    content: url(icons/troubleshooting.png);
+}
+/*
+troubleshooting
+ {
+  see 'note'
+}
+*/
+unit:before {
+    content: ' [';
+}
+unit:after {
+    content: ']';
+}
+user-interface {
+    display: inline;
+    font-variant: small-caps;
+}
+us-value:before {
+    content: ' / ';
+}
+us-value {
+    display: inline;
+}
+data>us-value:before {
+    content: "Wert (numerisch, imperial):\0B";
+    color: rgb(175, 175, 175);
+}data>us-value {
+    display: block;
+    margin-left: 22pt;
+}
+variable {
+    display: inline;
+}

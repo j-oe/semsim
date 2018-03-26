@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ***************************************************************************
+
+PI-Mod V1.2.2 - DTD Module "attribute-ents.ent"
+
+********************************************************************************
+
+DTD module declares attributes of PI-Mod DTD as parameter entities.
+
+Public Identifier:
+
+    "-//PI-MOD//ENTITIES Attribute Entities V1.2.2//EN"
+
+Typical invocation:
+
+	<!ENTITY % attribute-ents
+		PUBLIC "-//PI-MOD//ENTITIES Attribute Entities V1.2.2//EN"
+		"attribute-ents.ent"
+	>
+	%attribute-ents;
+
+********************************************************************************
+
+Copyright (C) 2011, The PI-Mod Project
+
+Contributors to the The PI-Mod Project (V1.2.2): 
+ 	 Wolfgang Ziegler 
+ 	 Stephan Steurer 
+ 	 Claudia Oberle
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+
+********************************************************************************
+
+Naming conventions for parameter entities:
+
+	cmf.ELEMENTGROUP	content model fragment: collects similar 
+				elements in group ELEMENTGROUP
+	cm.ELEMENT		content model: complete content model of element
+				ELEMENT
+	att.ATTRIBUTE		attribute: declaration of single attribute
+				ATTRIBUTE (with Name Type Default)
+	attv.ATTRIBUTE		attribute value enumeration: enumeration of
+				predefined values for Attribute ATTRIBUTE
+	atts.ATTRIBUTEGROUP	attribute sublist: collects attributes, which 
+				belong together, in group ATTRIBUTEGROUP
+	attl.ELEMENT		attribute list: complete attribute list of
+				element ELEMENT
+	attle.ELEMENT		attribute list extension: extension point for
+				additonial project specific attributes of
+				element ELEMENT; is always empty string in
+				PI-Mod Core DTD modules
+	csp.			conditional section parameter: conditional 
+				section for ... (see below), which can be
+				enabled (INCLUDE) or disabled (IGNORE)
+	csp.el.ELEMENT		... element: element declaration and
+				corresponding attribute declration of Element
+				ELEMENT
+	csp.es.ENTITY-SET	... entity set: declaration and call of 
+				parameter entity of entity set ENTITY-SET
+
+**************************************************************************** -->
+
+<!-- Copy from OASIS table module (needed for some XML parsers) -->
+<!ENTITY % yesorno "NMTOKEN">
+
+<!-- ********************* Attribute value enumerations ******************** -->
+
+<!ENTITY % attv.countries "
+	CDATA
+">
+<!ENTITY % attv.customerinterval "
+    CDATA
+">
+<!ENTITY % attv.datacustomer "
+    CDATA
+">
+<!ENTITY % attv.dataservice "
+    CDATA
+">
+<!ENTITY % attv.infoclass-1 "
+    CDATA
+">
+<!ENTITY % attv.langcode "
+    CDATA
+">
+<!ENTITY % attv.prodclass-1 "
+    CDATA
+">
+<!ENTITY % attv.serviceinterval "
+    CDATA
+">
+<!ENTITY % attv.specialintervals "
+    CDATA
+">
+<!ENTITY % attv.status "
+    CDATA
+">
+<!ENTITY % attv.userinterface "
+    CDATA
+">
+
+
+<!-- ******************** Single attribute declarations ******************** -->
+
+<!ENTITY % att.class "
+	class (caution | danger | notice | warning) #REQUIRED
+">
+<!ENTITY % att.infoclass-1 "
+	infoclass-1  %attv.infoclass-1;  #REQUIRED
+">
+<!ENTITY % att.nodeid "
+	nodeid CDATA #IMPLIED
+">	
+<!ENTITY % att.orient "
+  orient (port|land) 'port'
+">
+<!ENTITY % att.print "
+	print (yes | no) 'yes'
+">
+<!ENTITY % att.prodclass-1 "
+	prodclass-1 %attv.prodclass-1;  #REQUIRED
+">
+<!ENTITY % att.translate "
+	translate (yes | no) 'yes'
+">
+<!ENTITY % att.valid "
+	valid      CDATA    #IMPLIED
+">
+
+<!-- ******************** Attribute sublist declarations ******************* -->
+
+<!ENTITY % atts.data "
+	customer %attv.datacustomer; #IMPLIED
+	service %attv.dataservice; #IMPLIED 
+">
+<!ENTITY % atts.module "
+	countrycode %attv.countries; #IMPLIED
+	langcode %attv.langcode;  #IMPLIED
+">
+
+<!ENTITY % atts.mediaobject "
+	objectwidth (original | textsize | fullpage | marginsize)  'original'
+	%att.orient;
+">
+<!ENTITY % atts.link "
+	linktotargetid      CDATA     #IMPLIED
+">
+<!ENTITY % atts.classification "
+	%att.infoclass-1;
+	%att.prodclass-1;
+">
+
+<!-- ********************* Attribute list declarations ********************* -->
+
+<!ENTITY % attl.table "
+    %att.orient;
+	pgwide      %yesorno;       #IMPLIED
+	tabstyle    CDATA           #IMPLIED
+	tablewidth (textsize | fullpage | original) 'textsize'
+	%att.nodeid;
+	%att.translate;
+	%att.valid;
+">
+<!ENTITY % attl.tgroup "
+	tgroupstyle CDATA #IMPLIED
+	%att.nodeid;
+	%att.translate;
+">
+<!ENTITY % attl.thead "
+	%att.nodeid;
+	%att.translate;
+">
+<!ENTITY % attl.tbody "
+	%att.nodeid;
+	%att.translate;
+">
+<!ENTITY % attl.colspec "
+	%att.nodeid;
+	%att.translate;
+">
+<!ENTITY % attl.row "
+	%att.nodeid;
+	%att.translate;
+">
+<!ENTITY % attl.entry "
+	%att.nodeid;
+	%att.translate;
+">
+
+<!-- **** Declaration of attribut list extension point for OASIS table attributes **** -->
+
+<!ENTITY % attle.table "">
+<!ENTITY % attle.tgroup "">
+<!ENTITY % attle.thead "">
+<!ENTITY % attle.tbody "">
+<!ENTITY % attle.colspec "">
+<!ENTITY % attle.row "">
+<!ENTITY % attle.entry "">
+
+<!-- *************** End of DTD module "attribute-ents.ent" **************** -->

@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ***************************************************************************
+
+Customized PI-Mod V1.2.0 - DTD module "localset-elems.ent"
+
+********************************************************************************
+
+Declares custom elements for PI-Mod Standard.
+
+Public Identifier:
+
+	"-//PI-MOD-STANDARD//ELEMENTS Customized PI-Mod V1.2.0//EN"
+
+Typical invocation:
+
+	<!ENTITY % localset-elems
+		PUBLIC "-//PI-MOD-STANDARD//ELEMENTS Customized PI-Mod V1.2.0//EN"
+		"localset-elems.ent"
+	>
+	%localset-elems;
+
+********************************************************************************
+
+Copyright (C) 2011, The PI-Mod Project
+
+Contributors to the The PI-Mod Project (V1.2.2): 
+ 	 Wolfgang Ziegler 
+ 	 Stephan Steurer 
+ 	 Claudia Oberle
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+
+********************************************************************************
+
+Naming conventions for parameter entities:
+
+	cmf.ELEMENTGROUP	content model fragment: collects similar 
+				elements in group ELEMENTGROUP
+	cm.ELEMENT		content model: complete content model of element
+				ELEMENT
+	att.ATTRIBUTE		attribute: declaration of single attribute
+				ATTRIBUTE (with Name Type Default)
+	attv.ATTRIBUTE		attribute value enumeration: enumeration of
+				predefined values for Attribute ATTRIBUTE
+	atts.ATTRIBUTEGROUP	attribute sublist: collects attributes, which 
+				belong together, in group ATTRIBUTEGROUP
+	attl.ELEMENT		attribute list: complete attribute list of
+				element ELEMENT
+	attle.ELEMENT		attribute list extension: extension point for
+				additonial project specific attributes of
+				element ELEMENT; is always empty string in
+				PI-Mod Core DTD modules
+	csp.			conditional section parameter: conditional 
+				section for ... (see below), which can be
+				enabled (INCLUDE) or disabled (IGNORE)
+	csp.el.ELEMENT		... element: element declaration and
+				corresponding attribute declration of Element
+				ELEMENT
+	csp.es.ENTITY-SET	... entity set: declaration and call of 
+				parameter entity of entity set ENTITY-SET
+
+**************************************************************************** -->
+
+<!-- ************************ Element declarations ************************* -->
+
+<!-- ============================ Wrapper element ========================== -->
+<!ENTITY % csp.el.mod "INCLUDE">
+<![%csp.el.mod;[
+
+<!ENTITY % cm.mod "
+    (descriptive | task | collection)
+">
+<!ELEMENT mod               
+	%cm.mod;
+>
+<!ATTLIST mod    
+	%atts.module;
+>
+]]>
+
+<!-- ============================= Module types ============================ -->
+<!ENTITY % attl.modtype "
+	%atts.module;
+	%atts.classification;
+	%att.nodeid;
+	%att.valid;
+	%att.translate;
+">
+
+<!ENTITY % csp.el.diagnosis "INCLUDE">
+<![%csp.el.diagnosis;[
+
+<!ELEMENT diagnosis (heading, orientation?, diagnosis_body?, diagnosis*)>
+<!ATTLIST diagnosis
+	%attl.modtype;
+>
+<!ELEMENT diagnosis_body (table | errordescription+)>
+
+]]>
+
+<!ENTITY % csp.el.glossary "INCLUDE">
+<![%csp.el.glossary;[
+
+<!ELEMENT glossary (heading, orientation?, glossary_body?, glossary*)>
+<!ATTLIST glossary
+	%attl.modtype;
+>
+<!ELEMENT glossary_body (table | glossary-entry+)>
+
+]]>
+
+<!ENTITY % csp.el.lubrication "INCLUDE">
+<![%csp.el.lubrication;[
+
+<!ELEMENT lubrication (heading, orientation?, lubrication_body?, lubrication*)>
+<!ATTLIST lubrication
+	%attl.modtype;
+>
+<!ELEMENT lubrication_body (table | lubricant+)>
+
+]]>
+
+<!ENTITY % csp.el.taskintervals "INCLUDE">
+<![%csp.el.taskintervals;[
+
+<!ELEMENT taskintervals (heading, orientation?, taskintervals_body?, taskintervals*)>
+<!ATTLIST taskintervals
+	%attl.modtype;
+>
+<!ELEMENT taskintervals_body (table | taskinterval+)>
+
+]]>
+
+<!ENTITY % csp.el.tools "INCLUDE">
+<![%csp.el.tools;[
+
+<!ELEMENT tools (heading, orientation?, tools_body?, tools*)>
+<!ATTLIST tools
+	%attl.modtype;
+>
+<!ELEMENT tools_body (table | (tool | part)+)>
+
+]]>
+
+<!-- *************** End of DTD module "localset-elems.ent" **************** -->

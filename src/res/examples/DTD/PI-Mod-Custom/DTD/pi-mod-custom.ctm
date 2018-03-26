@@ -1,0 +1,1033 @@
+<?xml version="1.0"?>
+<!DOCTYPE DTDExtensions SYSTEM "ctm.dtd">
+/*
+  *******************************************************************************
+  * RevisionInformation:
+  * $LastChangedRevision: 1970 $
+  * $LastChangedDate: 2009-08-17 12:06:40 +0200 (Mo, 17 Aug 2009) $
+  *******************************************************************************
+ */
+
+<DTDExtensions Version="2.0">
+  <ElementPropertiesList>
+    
+    <GlobalPrettyPrintOptions>
+      <!-- <NoPrettyPrinting/> -->
+      <PrettyPrintOptions>
+        <IndentContent/>
+        <NewLineBeforeEndTag/>
+        <NewLineBeforeStartTag/>
+      </PrettyPrintOptions>
+    </GlobalPrettyPrintOptions>
+    
+    <ElementProperties>
+      <Name>action</Name>
+      <LongDescription>Einschrittige Handlungsaufforderung</LongDescription>
+    </ElementProperties>
+
+    <ElementProperties>
+      <Name>actiondescription</Name>
+      <LongDescription>Erläuterung zu einem oder mehreren Handlungsschritten</LongDescription>
+    </ElementProperties>
+
+    <ElementProperties>
+      <Name>actionsequenceend</Name>
+      <LongDescription>Abschließende Resultatsangabe</LongDescription>
+    </ElementProperties>
+
+    <ElementProperties>
+      <Name>caption</Name>
+      <LongDescription>Bild- oder Tabellenbeschriftung</LongDescription>
+    </ElementProperties>
+
+    <ElementProperties>
+      <Name>cause</Name>
+      <LongDescription>Art und Ursache einer Gefahr oder einer Störung</LongDescription>
+    </ElementProperties>
+
+    <ElementProperties>
+      <Name>condition</Name>
+      <LongDescription>Bedingung, die erfüllt sein muss, damit der Anwender den direkt darauffolgenden Handlungsschritt ausführt.</LongDescription>
+    </ElementProperties>
+
+    <ElementProperties>
+      <Name>consequences</Name>
+      <LongDescription>Mögliche Folge, bei Nichtbeachtung eines Sicherheitshinweises</LongDescription>
+    </ElementProperties>
+
+    <ElementProperties>
+      <Name>data</Name>
+      <LongDescription>Einzelnes technisches Datum</LongDescription>
+    </ElementProperties>
+
+    <ElementProperties>
+      <Name>datatype</Name>
+      <LongDescription>Typ eines technischen Datums</LongDescription>
+    </ElementProperties>
+
+    <ElementProperties>
+      <Name>description</Name>
+      <LongDescription>Beschreibung eines Gegenstandes, z.B. Schmiermittel oder Werkzeug</LongDescription>
+    </ElementProperties>
+
+    <ElementProperties>
+      <Name>descriptive</Name>
+      <LongDescription>Ablage für beschreibende Texte (Modul)</LongDescription>
+    </ElementProperties>
+
+    <ElementProperties>
+      <Name>descriptive_body</Name>
+      <LongDescription>Ablage für beschreibende Texte (Modulinhalte)</LongDescription>
+    </ElementProperties>
+
+    <ElementProperties>
+      <Name>diagnosis</Name>
+      <LongDescription>Ablage für Informationen zur Fehlersuche und Fehlerbehandlung</LongDescription>
+    </ElementProperties>
+
+    <ElementProperties>
+      <Name>diagnosis_body</Name>
+      <LongDescription>Ablage für Informationen zur Fehlersuche und Fehlerbehandlung (Modulinhalte)</LongDescription>
+    </ElementProperties>
+
+    <ElementProperties>
+      <Name>diagnosisinfo</Name>
+      <LongDescription>Ablage für einzelne Informationen zur Fehlersuche und Fehlerbehandlung</LongDescription>
+    </ElementProperties>
+
+    <ElementProperties>
+      <Name>emphasis</Name>
+      <LongDescription>Hervorgehobener Text</LongDescription>
+    </ElementProperties>
+
+    <ElementProperties>
+      <Name>error-code</Name>
+      <LongDescription>Fehlercode eines Fehlers</LongDescription>
+    </ElementProperties>
+
+    <ElementProperties>
+      <Name>errordescription</Name>
+      <LongDescription>Beschreibung eines Fehlers oder eines Fehlercodes</LongDescription>
+    </ElementProperties>
+
+    <ElementProperties>
+      <Name>filter-set</Name>
+      <LongDescription>Container für einzelne Filterkriterien</LongDescription>
+    </ElementProperties>
+
+    <ElementProperties>
+      <Name>filter</Name>
+      <LongDescription>Filterkriterium</LongDescription>
+    </ElementProperties>
+
+    <ElementProperties>
+      <Name>footnote</Name>
+      <LongDescription>Fuünote</LongDescription>
+    </ElementProperties>
+
+    <ElementProperties>
+      <Name>glossary</Name>
+      <LongDescription>Ablage für Glossare</LongDescription>
+    </ElementProperties>
+
+    <ElementProperties>
+      <Name>glossary_body</Name>
+      <LongDescription>Ablage für Glossare (Modulinhalt)</LongDescription>
+    </ElementProperties>
+
+    <ElementProperties>
+      <Name>glossary-entry</Name>
+      <LongDescription>Glossareintrag</LongDescription>
+    </ElementProperties>
+
+    <ElementProperties>
+      <Name>glossdef</Name>
+      <LongDescription>Glossareintrag</LongDescription>
+    </ElementProperties>
+
+    <ElementProperties>
+      <Name>glosterm</Name>
+      <LongDescription>Bezeichnung eines Glossareintrags</LongDescription>
+    </ElementProperties>
+
+    <ElementProperties>
+      <Name>heading</Name>
+      <LongDescription>Themenangabe in Form einer überschrift</LongDescription>
+    </ElementProperties>
+
+    <ElementProperties>
+      <Name>identification</Name>
+      <LongDescription>Eindeutige Identifikation eines Problems</LongDescription>
+    </ElementProperties>
+
+    <ElementProperties>
+      <Name>identno</Name>
+      <LongDescription>Material- bzw. Sachnummer</LongDescription>
+    </ElementProperties>
+
+    <ElementProperties>
+      <Name>image</Name>
+      <LongDescription>Container-Element einer Grafikdatei</LongDescription>
+    </ElementProperties>
+
+    <ElementProperties>
+      <Name>inlinemediaobject</Name>
+      <LongDescription>Medienobjekt, beispielsweise eine Grafik</LongDescription>
+    </ElementProperties>
+
+    <ElementProperties>
+      <Name>inlinedata</Name>
+      <LongDescription>Technische Daten</LongDescription>
+    </ElementProperties>
+
+    <ElementProperties>
+      <Name>item</Name>
+      <LongDescription>Eingabe eines Listeneintrags</LongDescription>
+    </ElementProperties>
+
+    <ElementProperties>
+      <Name>itemno</Name>
+      <LongDescription>Positionsnummer der Abbildung</LongDescription>
+    </ElementProperties>
+
+    <ElementProperties>
+      <Name>itemno</Name>
+      <LongDescription>Beschreibung zur Positionsnummer</LongDescription>
+    </ElementProperties>
+
+    <ElementProperties>
+      <Name>key-entry</Name>
+      <LongDescription>Eintrag für das Stichwortverzeichnis</LongDescription>
+    </ElementProperties>
+
+    <ElementProperties>
+      <Name>keyword</Name>
+      <LongDescription>Container für Eintrüge für das Stichwortverzeichnis</LongDescription>
+    </ElementProperties>
+
+    <ElementProperties>
+      <Name>legend</Name>
+      <LongDescription>Legende zu einer Abbildung</LongDescription>
+    </ElementProperties>
+
+    <ElementProperties>
+      <Name>legenditem</Name>
+      <LongDescription>Legendeneintrag</LongDescription>
+    </ElementProperties>
+
+    <ElementProperties>
+      <Name>link</Name>
+      <LongDescription>Querverweis</LongDescription>
+    </ElementProperties>
+
+    <ElementProperties>
+      <Name>list</Name>
+      <LongDescription>Container-Element einer Liste</LongDescription>
+    </ElementProperties>
+
+    <ElementProperties>
+      <Name>listintro</Name>
+      <LongDescription>Einleitung in einer Liste</LongDescription>
+    </ElementProperties>
+
+    <ElementProperties>
+      <Name>lubricant</Name>
+      <LongDescription>Schmier- oder Betriebsmittel</LongDescription>
+    </ElementProperties>
+
+    <ElementProperties>
+      <Name>lubricantinfo</Name>
+      <LongDescription>Container für einzelne Schmier- oder Betriebsmittel</LongDescription>
+    </ElementProperties>
+
+    <ElementProperties>
+      <Name>lubrication</Name>
+      <LongDescription>Ablage für Informationen zu Schmier- und Betriebsmitteln</LongDescription>
+    </ElementProperties>
+
+    <ElementProperties>
+      <Name>lubrication_body</Name>
+      <LongDescription>Ablage für Informationen zu Schmier- und Betriebsmitteln</LongDescription>
+    </ElementProperties>
+
+    <ElementProperties>
+      <Name>lubrclass</Name>
+      <LongDescription>Schmier- und Betriebsmittelklassifikation</LongDescription>
+    </ElementProperties>
+
+    <ElementProperties>
+      <Name>mediaobject</Name>
+      <LongDescription>Medienobjekt, beispielsweise eine Grafik</LongDescription>
+    </ElementProperties>
+
+    <ElementProperties>
+      <Name>medium</Name>
+      <LongDescription>Schmier- oder Betriebsmittel</LongDescription>
+    </ElementProperties>
+
+    <ElementProperties>
+      <Name>name</Name>
+      <LongDescription>Namen eines Gegenstandes, z.B. Schmiermittel oder Werkzeug</LongDescription>
+    </ElementProperties>
+
+    <ElementProperties>
+      <Name>note</Name>
+      <LongDescription>Hinweis, durch den der Leser auf eine Information aufmerksam gemacht werden soll.</LongDescription>
+    </ElementProperties>
+
+    <ElementProperties>
+      <Name>number</Name>
+      <LongDescription>Zahlenwert einer physikalischen Grüüe</LongDescription>
+    </ElementProperties>
+
+    <ElementProperties>
+      <Name>or-action</Name>
+      <LongDescription>Alternative einschrittige Handlungsaufforderung</LongDescription>
+    </ElementProperties>
+
+    <ElementProperties>
+      <Name>outlook</Name>
+      <LongDescription>Ausblick auf weitere Aufgaben</LongDescription>
+    </ElementProperties>
+
+    <ElementProperties>
+      <Name>paragraph</Name>
+      <LongDescription>Eingabe von Textinformationen</LongDescription>
+    </ElementProperties>
+
+    <ElementProperties>
+      <Name>part</Name>
+      <LongDescription>Benütigtes Material</LongDescription>
+    </ElementProperties>
+
+    <ElementProperties>
+      <Name>prerequisites</Name>
+      <LongDescription>Voraussetzung für eine Handlungsblock</LongDescription>
+    </ElementProperties>
+
+    <ElementProperties>
+      <Name>problemdescription</Name>
+      <LongDescription>Erlüuterung zu einer Problemursache</LongDescription>
+    </ElementProperties>
+
+    <ElementProperties>
+      <Name>quantity</Name>
+      <LongDescription>Beschreibung der Menge</LongDescription>
+    </ElementProperties>
+
+    <ElementProperties>
+      <Name>quoted</Name>
+      <LongDescription>Text in Anführungszeichen</LongDescription>
+    </ElementProperties>
+
+    <ElementProperties>
+      <Name>result</Name>
+      <LongDescription>Ergebnis der vorangegangenen Handlungsaufforderung</LongDescription>
+    </ElementProperties>
+
+    <ElementProperties>
+      <Name>safetyadvice</Name>
+      <LongDescription>Hinweis auf Gefahren</LongDescription>
+    </ElementProperties>
+
+    <ElementProperties>
+      <Name>safetysymbol</Name>
+      <LongDescription>Sicherheitszeichen in Warnhinweisen</LongDescription>
+    </ElementProperties>
+
+    <ElementProperties>
+      <Name>si-value</Name>
+      <LongDescription>Metrisch physikalische Grüüe</LongDescription>
+    </ElementProperties>
+
+    <ElementProperties>
+      <Name>shortinfo</Name>
+      <LongDescription>Kurzbeschreibung</LongDescription>
+    </ElementProperties>
+
+    <ElementProperties>
+      <Name>solution</Name>
+      <LongDescription>Behebungslüsung einer Stürung</LongDescription>
+    </ElementProperties>
+
+    <ElementProperties>
+      <Name>spec</Name>
+      <LongDescription>Spezifikation eines Gegenstandes, z.B. Schmiermittel oder Werkzeug</LongDescription>
+    </ElementProperties>
+
+    <ElementProperties>
+      <Name>step</Name>
+      <LongDescription>Handlungsschritt</LongDescription>
+    </ElementProperties>
+
+    <ElementProperties>
+      <Name>subscript</Name>
+      <LongDescription>Tiefgestellter Text</LongDescription>
+    </ElementProperties>
+    
+    <ElementProperties>
+      <Name>superscript</Name>
+      <LongDescription>Hochgestellter Text</LongDescription>
+    </ElementProperties>
+
+    <ElementProperties>
+      <Name>symbol</Name>
+      <LongDescription>Symbol eines Gegenstandes, z.B. Schmiermittel oder Werkzeug</LongDescription>
+    </ElementProperties>
+
+    <ElementProperties>
+      <Name>symptom</Name>
+      <LongDescription>Beschreibung einer Stürung</LongDescription>
+    </ElementProperties>
+
+    <ElementProperties>
+      <Name>table</Name>
+      <LongDescription>Tabelle</LongDescription>
+    </ElementProperties>
+
+    <ElementProperties>
+      <Name>task</Name>
+      <LongDescription>In sich abgeschlossener Handlungsblock (Modul)</LongDescription>
+    </ElementProperties>
+
+    <ElementProperties>
+      <Name>task_body</Name>
+      <LongDescription>In sich abgeschlossener Handlungsblock (Modulinhalte)</LongDescription>
+    </ElementProperties>
+
+    <ElementProperties>
+      <Name>taskinterval</Name>
+      <LongDescription>Einzelne Wartungstütigkeit</LongDescription>
+    </ElementProperties>
+
+    <ElementProperties>
+      <Name>taskintervalinfo</Name>
+      <LongDescription>Ablage für einzelne Wartungstütigkeiten</LongDescription>
+    </ElementProperties>
+
+    <ElementProperties>
+      <Name>taskintervals</Name>
+      <LongDescription>Ablage für Wartungsplüne</LongDescription>
+    </ElementProperties>
+
+    <ElementProperties>
+      <Name>taskintervals_body</Name>
+      <LongDescription>Ablage für Wartungsplüne (Modulinhalt)</LongDescription>
+    </ElementProperties>
+
+    <ElementProperties>
+      <Name>tbody</Name>
+      <LongDescription>Container von Tabelleninhalten</LongDescription>
+    </ElementProperties>
+
+    <ElementProperties>
+      <Name>tbody</Name>
+      <LongDescription>Rahmen einer Tabelle, der diese gruppiert</LongDescription>
+    </ElementProperties>
+
+    <ElementProperties>
+      <Name>techdata</Name>
+      <LongDescription>Container eines technischen Datums</LongDescription>
+    </ElementProperties>
+
+    <ElementProperties>
+      <Name>textdata</Name>
+      <LongDescription>Technisches Datum (nicht-numerisch)</LongDescription>
+    </ElementProperties>
+
+    <ElementProperties>
+      <Name>thead</Name>
+      <LongDescription>Kopfzeile einer Tabelle</LongDescription>
+    </ElementProperties>
+
+    <ElementProperties>
+      <Name>toolinfo</Name>
+      <LongDescription>Ablage für einzelne Werkzeuge oder Materialien</LongDescription>
+    </ElementProperties>
+
+    <ElementProperties>
+      <Name>tools</Name>
+      <LongDescription>Ablage für Werkzeuge</LongDescription>
+    </ElementProperties>
+
+    <ElementProperties>
+      <Name>tools_body</Name>
+      <LongDescription>Ablage für Werkzeuge (Modulinhalt)</LongDescription>
+    </ElementProperties>
+
+    <ElementProperties>
+      <Name>transno</Name>
+      <LongDescription>Nicht zu übersetzender Text</LongDescription>
+    </ElementProperties>
+
+    <ElementProperties>
+      <Name>troubleshooting</Name>
+      <LongDescription>Hilfe bei Problemen wührend der Handlungsdurchführung</LongDescription>
+    </ElementProperties>
+
+    <ElementProperties>
+      <Name>user-interface</Name>
+      <LongDescription>Bedienelemente, wie z.B. Tasten oder Display-Anzeigen</LongDescription>
+    </ElementProperties>
+
+    <ElementProperties>
+      <Name>unit</Name>
+      <LongDescription>Physikalische Einheit</LongDescription>
+    </ElementProperties>
+
+    <ElementProperties>
+      <Name>us-value</Name>
+      <LongDescription>Nicht-metrisch physikalische Grüüe</LongDescription>
+    </ElementProperties>
+
+  </ElementPropertiesList>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+
+    <ElementProperties>
+      <Name ns="">actiondescription</Name>
+      <PrettyPrintOptions></PrettyPrintOptions>
+      <IndentContent/>
+      <NewLineBeforeEndTag/>
+      <NewLineBeforeStartTag/>
+    </ElementProperties>
+    <ElementProperties>
+      <Name ns="">actionsequenceend</Name>
+      <PrettyPrintOptions></PrettyPrintOptions>
+      <IndentContent/>
+      <NewLineBeforeEndTag/>
+      <NewLineBeforeStartTag/>
+    </ElementProperties>
+    <ElementProperties>
+      <Name ns="">colspec</Name>
+      <PrettyPrintOptions></PrettyPrintOptions>
+      <IndentContent/>
+      <NewLineBeforeEndTag/>
+      <NewLineBeforeStartTag/>
+    </ElementProperties>
+    <ElementProperties>
+      <Name ns="">data</Name>
+      <PrettyPrintOptions></PrettyPrintOptions>
+      <IndentContent/>
+      <NewLineBeforeEndTag/>
+      <NewLineBeforeStartTag/>
+    </ElementProperties>
+    <ElementProperties>
+      <Name ns="">datatype</Name>
+      <PrettyPrintOptions></PrettyPrintOptions>
+      <IndentContent/>
+      <NewLineBeforeEndTag/>
+      <NewLineBeforeStartTag/>
+    </ElementProperties>
+    <ElementProperties>
+      <Name ns="">description</Name>
+      <PrettyPrintOptions></PrettyPrintOptions>
+      <IndentContent/>
+      <NewLineBeforeEndTag/>
+      <NewLineBeforeStartTag/>
+    </ElementProperties>
+    <ElementProperties>
+      <Name ns="">descriptive_body</Name>
+      <PrettyPrintOptions></PrettyPrintOptions>
+      <IndentContent/>
+      <NewLineBeforeEndTag/>
+      <NewLineBeforeStartTag/>
+    </ElementProperties>
+    <ElementProperties>
+      <Name ns="">diagnosis_body</Name>
+      <PrettyPrintOptions></PrettyPrintOptions>
+      <IndentContent/>
+      <NewLineBeforeEndTag/>
+      <NewLineBeforeStartTag/>
+    </ElementProperties>
+    <ElementProperties>
+      <Name ns="">entry</Name>
+      <PrettyPrintOptions></PrettyPrintOptions>
+      <IndentContent/>
+      <NewLineBeforeEndTag/>
+      <NewLineBeforeStartTag/>
+    </ElementProperties>
+    <ElementProperties>
+      <Name ns="">entrytbl</Name>
+      <PrettyPrintOptions></PrettyPrintOptions>
+      <IndentContent/>
+      <NewLineBeforeEndTag/>
+      <NewLineBeforeStartTag/>
+    </ElementProperties>
+    <ElementProperties>
+      <Name ns="">error-code</Name>
+      <PrettyPrintOptions></PrettyPrintOptions>
+      <IndentContent/>
+      <NewLineBeforeEndTag/>
+      <NewLineBeforeStartTag/>
+    </ElementProperties>
+    <ElementProperties>
+      <Name ns="">errordescription</Name>
+      <PrettyPrintOptions></PrettyPrintOptions>
+      <IndentContent/>
+      <NewLineBeforeEndTag/>
+      <NewLineBeforeStartTag/>
+    </ElementProperties>
+    <ElementProperties>
+      <Name ns="">figure</Name>
+      <PrettyPrintOptions></PrettyPrintOptions>
+      <IndentContent/>
+      <NewLineBeforeEndTag/>
+      <NewLineBeforeStartTag/>
+    </ElementProperties>
+    <ElementProperties>
+      <Name ns="">footnote</Name>
+      <PrettyPrintOptions></PrettyPrintOptions>
+      <IndentContent/>
+      <NewLineBeforeEndTag/>
+      <NewLineBeforeStartTag/>
+    </ElementProperties>
+    <ElementProperties>
+      <Name ns="">glossary-entry</Name>
+      <PrettyPrintOptions></PrettyPrintOptions>
+      <IndentContent/>
+      <NewLineBeforeEndTag/>
+      <NewLineBeforeStartTag/>
+    </ElementProperties>
+    <ElementProperties>
+      <Name ns="">glossary_body</Name>
+      <PrettyPrintOptions></PrettyPrintOptions>
+      <IndentContent/>
+      <NewLineBeforeEndTag/>
+      <NewLineBeforeStartTag/>
+    </ElementProperties>
+    <ElementProperties>
+      <Name ns="">glossdef</Name>
+      <PrettyPrintOptions></PrettyPrintOptions>
+      <IndentContent/>
+      <NewLineBeforeEndTag/>
+      <NewLineBeforeStartTag/>
+    </ElementProperties>
+    <ElementProperties>
+      <Name ns="">glossterm</Name>
+      <PrettyPrintOptions></PrettyPrintOptions>
+      <IndentContent/>
+      <NewLineBeforeEndTag/>
+      <NewLineBeforeStartTag/>
+    </ElementProperties>
+    <ElementProperties>
+      <Name ns="">identification</Name>
+      <PrettyPrintOptions></PrettyPrintOptions>
+      <IndentContent/>
+      <NewLineBeforeEndTag/>
+      <NewLineBeforeStartTag/>
+    </ElementProperties>
+    <ElementProperties>
+      <Name ns="">inlinemediaobject</Name>
+      <PrettyPrintOptions></PrettyPrintOptions>
+      <IndentContent/>
+      <NewLineBeforeEndTag/>
+      <NewLineBeforeStartTag/>
+    </ElementProperties>
+    <ElementProperties>
+      <Name ns="">key-entry</Name>
+      <PrettyPrintOptions></PrettyPrintOptions>
+      <IndentContent/>
+      <NewLineBeforeEndTag/>
+      <NewLineBeforeStartTag/>
+    </ElementProperties>
+    <ElementProperties>
+      <Name ns="">keyword</Name>
+      <PrettyPrintOptions></PrettyPrintOptions>
+      <IndentContent/>
+      <NewLineBeforeEndTag/>
+      <NewLineBeforeStartTag/>
+    </ElementProperties>
+    <ElementProperties>
+      <Name ns="">lower-value</Name>
+      <PrettyPrintOptions></PrettyPrintOptions>
+      <IndentContent/>
+      <NewLineBeforeEndTag/>
+      <NewLineBeforeStartTag/>
+    </ElementProperties>
+    <ElementProperties>
+      <Name ns="">lubrclass</Name>
+      <PrettyPrintOptions></PrettyPrintOptions>
+      <IndentContent/>
+      <NewLineBeforeEndTag/>
+      <NewLineBeforeStartTag/>
+    </ElementProperties>
+    <ElementProperties>
+      <Name ns="">lubrication</Name>
+      <PrettyPrintOptions></PrettyPrintOptions>
+      <IndentContent/>
+      <NewLineBeforeEndTag/>
+      <NewLineBeforeStartTag/>
+    </ElementProperties>
+    <ElementProperties>
+      <Name ns="">lubrication_body</Name>
+      <PrettyPrintOptions></PrettyPrintOptions>
+      <IndentContent/>
+      <NewLineBeforeEndTag/>
+      <NewLineBeforeStartTag/>
+    </ElementProperties>
+    <ElementProperties>
+      <Name ns="">medium</Name>
+      <PrettyPrintOptions></PrettyPrintOptions>
+      <IndentContent/>
+      <NewLineBeforeEndTag/>
+      <NewLineBeforeStartTag/>
+    </ElementProperties>
+    <ElementProperties>
+      <Name ns="">mod</Name>
+      <PrettyPrintOptions></PrettyPrintOptions>
+      <IndentContent/>
+      <NewLineBeforeEndTag/>
+      <NewLineBeforeStartTag/>
+    </ElementProperties>
+    <ElementProperties>
+      <Name ns="">number</Name>
+      <PrettyPrintOptions></PrettyPrintOptions>
+      <IndentContent/>
+      <NewLineBeforeEndTag/>
+      <NewLineBeforeStartTag/>
+    </ElementProperties>
+    <ElementProperties>
+      <Name ns="">or-action</Name>
+      <PrettyPrintOptions></PrettyPrintOptions>
+      <IndentContent/>
+      <NewLineBeforeEndTag/>
+      <NewLineBeforeStartTag/>
+    </ElementProperties>
+    <ElementProperties>
+      <Name ns="">orientation</Name>
+      <PrettyPrintOptions></PrettyPrintOptions>
+      <IndentContent/>
+      <NewLineBeforeEndTag/>
+      <NewLineBeforeStartTag/>
+    </ElementProperties>
+    <ElementProperties>
+      <Name ns="">partsname</Name>
+      <PrettyPrintOptions></PrettyPrintOptions>
+      <IndentContent/>
+      <NewLineBeforeEndTag/>
+      <NewLineBeforeStartTag/>
+    </ElementProperties>
+    <ElementProperties>
+      <Name ns="">problemdescription</Name>
+      <PrettyPrintOptions></PrettyPrintOptions>
+      <IndentContent/>
+      <NewLineBeforeEndTag/>
+      <NewLineBeforeStartTag/>
+    </ElementProperties>
+    <ElementProperties>
+      <Name ns="">row</Name>
+      <PrettyPrintOptions></PrettyPrintOptions>
+      <IndentContent/>
+      <NewLineBeforeEndTag/>
+      <NewLineBeforeStartTag/>
+    </ElementProperties>
+    <ElementProperties>
+      <Name ns="">shortinfo</Name>
+      <PrettyPrintOptions></PrettyPrintOptions>
+      <IndentContent/>
+      <NewLineBeforeEndTag/>
+      <NewLineBeforeStartTag/>
+    </ElementProperties>
+    <ElementProperties>
+      <Name ns="">si-value</Name>
+      <PrettyPrintOptions></PrettyPrintOptions>
+      <IndentContent/>
+      <NewLineBeforeEndTag/>
+      <NewLineBeforeStartTag/>
+    </ElementProperties>
+    <ElementProperties>
+      <Name ns="">solution</Name>
+      <PrettyPrintOptions></PrettyPrintOptions>
+      <IndentContent/>
+      <NewLineBeforeEndTag/>
+      <NewLineBeforeStartTag/>
+    </ElementProperties>
+    <ElementProperties>
+      <Name ns="">spanspec</Name>
+      <PrettyPrintOptions></PrettyPrintOptions>
+      <IndentContent/>
+      <NewLineBeforeEndTag/>
+      <NewLineBeforeStartTag/>
+    </ElementProperties>
+    <ElementProperties>
+      <Name ns="">spec</Name>
+      <PrettyPrintOptions></PrettyPrintOptions>
+      <IndentContent/>
+      <NewLineBeforeEndTag/>
+      <NewLineBeforeStartTag/>
+    </ElementProperties>
+    <ElementProperties>
+      <Name ns="">symbol</Name>
+      <PrettyPrintOptions></PrettyPrintOptions>
+      <IndentContent/>
+      <NewLineBeforeEndTag/>
+      <NewLineBeforeStartTag/>
+    </ElementProperties>
+    <ElementProperties>
+      <Name ns="">symptom</Name>
+      <PrettyPrintOptions></PrettyPrintOptions>
+      <IndentContent/>
+      <NewLineBeforeEndTag/>
+      <NewLineBeforeStartTag/>
+    </ElementProperties>
+    <ElementProperties>
+      <Name ns="">table</Name>
+      <PrettyPrintOptions></PrettyPrintOptions>
+      <IndentContent/>
+      <NewLineBeforeEndTag/>
+      <NewLineBeforeStartTag/>
+    </ElementProperties>
+    <ElementProperties>
+      <Name ns="">task_body</Name>
+      <PrettyPrintOptions></PrettyPrintOptions>
+      <IndentContent/>
+      <NewLineBeforeEndTag/>
+      <NewLineBeforeStartTag/>
+    </ElementProperties>
+    <ElementProperties>
+      <Name ns="">taskinterval</Name>
+      <PrettyPrintOptions></PrettyPrintOptions>
+      <IndentContent/>
+      <NewLineBeforeEndTag/>
+      <NewLineBeforeStartTag/>
+    </ElementProperties>
+    <ElementProperties>
+      <Name ns="">taskintervals_body</Name>
+      <PrettyPrintOptions></PrettyPrintOptions>
+      <IndentContent/>
+      <NewLineBeforeEndTag/>
+      <NewLineBeforeStartTag/>
+    </ElementProperties>
+    <ElementProperties>
+      <Name ns="">tbody</Name>
+      <PrettyPrintOptions></PrettyPrintOptions>
+      <IndentContent/>
+      <NewLineBeforeEndTag/>
+      <NewLineBeforeStartTag/>
+    </ElementProperties>
+    <ElementProperties>
+      <Name ns="">techdata</Name>
+      <PrettyPrintOptions></PrettyPrintOptions>
+      <IndentContent/>
+      <NewLineBeforeEndTag/>
+      <NewLineBeforeStartTag/>
+    </ElementProperties>
+    <ElementProperties>
+      <Name ns="">textdata</Name>
+      <PrettyPrintOptions></PrettyPrintOptions>
+      <IndentContent/>
+      <NewLineBeforeEndTag/>
+      <NewLineBeforeStartTag/>
+    </ElementProperties>
+    <ElementProperties>
+      <Name ns="">textlink</Name>
+      <PrettyPrintOptions></PrettyPrintOptions>
+      <IndentContent/>
+      <NewLineBeforeEndTag/>
+      <NewLineBeforeStartTag/>
+    </ElementProperties>
+    <ElementProperties>
+      <Name ns="">tfoot</Name>
+      <PrettyPrintOptions></PrettyPrintOptions>
+      <IndentContent/>
+      <NewLineBeforeEndTag/>
+      <NewLineBeforeStartTag/>
+    </ElementProperties>
+    <ElementProperties>
+      <Name ns="">tgroup</Name>
+      <PrettyPrintOptions></PrettyPrintOptions>
+      <IndentContent/>
+      <NewLineBeforeEndTag/>
+      <NewLineBeforeStartTag/>
+    </ElementProperties>
+    <ElementProperties>
+      <Name ns="">thead</Name>
+      <PrettyPrintOptions></PrettyPrintOptions>
+      <IndentContent/>
+      <NewLineBeforeEndTag/>
+      <NewLineBeforeStartTag/>
+    </ElementProperties>
+    <ElementProperties>
+      <Name ns="">tolerance-asymmetric-value</Name>
+      <PrettyPrintOptions></PrettyPrintOptions>
+      <IndentContent/>
+      <NewLineBeforeEndTag/>
+      <NewLineBeforeStartTag/>
+    </ElementProperties>
+    <ElementProperties>
+      <Name ns="">tolerance-high-value</Name>
+      <PrettyPrintOptions></PrettyPrintOptions>
+      <IndentContent/>
+      <NewLineBeforeEndTag/>
+      <NewLineBeforeStartTag/>
+    </ElementProperties>
+    <ElementProperties>
+      <Name ns="">tolerance-low-value</Name>
+      <PrettyPrintOptions></PrettyPrintOptions>
+      <IndentContent/>
+      <NewLineBeforeEndTag/>
+      <NewLineBeforeStartTag/>
+    </ElementProperties>
+    <ElementProperties>
+      <Name ns="">tolerance-symmetric-value</Name>
+      <PrettyPrintOptions></PrettyPrintOptions>
+      <IndentContent/>
+      <NewLineBeforeEndTag/>
+      <NewLineBeforeStartTag/>
+    </ElementProperties>
+    <ElementProperties>
+      <Name ns="">tools_body</Name>
+      <PrettyPrintOptions></PrettyPrintOptions>
+      <IndentContent/>
+      <NewLineBeforeEndTag/>
+      <NewLineBeforeStartTag/>
+    </ElementProperties>
+    <ElementProperties>
+      <Name ns="">transno</Name>
+      <PrettyPrintOptions></PrettyPrintOptions>
+      <IndentContent/>
+      <NewLineBeforeEndTag/>
+      <NewLineBeforeStartTag/>
+    </ElementProperties>
+    <ElementProperties>
+      <Name ns="">troubleshooting</Name>
+      <PrettyPrintOptions></PrettyPrintOptions>
+      <IndentContent/>
+      <NewLineBeforeEndTag/>
+      <NewLineBeforeStartTag/>
+    </ElementProperties>
+    <ElementProperties>
+      <Name ns="">unit</Name>
+      <PrettyPrintOptions></PrettyPrintOptions>
+      <IndentContent/>
+      <NewLineBeforeEndTag/>
+      <NewLineBeforeStartTag/>
+    </ElementProperties>
+    <ElementProperties>
+      <Name ns="">upper-value</Name>
+      <PrettyPrintOptions></PrettyPrintOptions>
+      <IndentContent/>
+      <NewLineBeforeEndTag/>
+      <NewLineBeforeStartTag/>
+    </ElementProperties>
+    <ElementProperties>
+      <Name ns="">us-value</Name>
+      <PrettyPrintOptions></PrettyPrintOptions>
+      <IndentContent/>
+      <NewLineBeforeEndTag/>
+      <NewLineBeforeStartTag/>
+    </ElementProperties>
+    <ElementProperties>
+      <Name ns="">variable</Name>
+      <PrettyPrintOptions></PrettyPrintOptions>
+      <IndentContent/>
+      <NewLineBeforeEndTag/>
+      <NewLineBeforeStartTag/>
+    </ElementProperties>
+  
+  
+  <ListElements>
+    <BulletedList>
+      <Name ns="">list</Name>
+      <ListItem ns="">item</ListItem>
+    </BulletedList>
+  </ListElements>
+  <TogglingInlines>
+    <Italic>
+      <Name ns="">emphasis</Name>
+    </Italic>
+  </TogglingInlines>
+  <Paragraphs>
+    <Paragraph>
+      <Name ns="">paragraph</Name>
+    </Paragraph>
+  </Paragraphs>
+  <FollowedByList>
+    <FollowedByListItem>
+      <Name ns="">paragraph</Name>
+      <FollowedBy ns="">paragraph</FollowedBy>
+    </FollowedByListItem>
+    <FollowedByListItem>
+      <Name ns="">list</Name>
+      <FollowedBy ns="">paragraph</FollowedBy>
+    </FollowedByListItem>
+    <FollowedByListItem>
+      <Name ns="">heading</Name>
+      <FollowedBy ns="">paragraph</FollowedBy>
+    </FollowedByListItem>
+    <FollowedByListItem>
+      <Name ns="">table</Name>
+      <FollowedBy ns="">paragraph</FollowedBy>
+    </FollowedByListItem>
+  </FollowedByList>
+  
+-->
+  
+  
+  <Templates>
+    <Template>
+      <Name>cause</Name>
+      MiniTemplate><![CDATA[<cause><?xm-replace_textArt und Ursache einer Gefahr oder einer Störung ?></cause>]]></MiniTemplate>
+    </Template>
+    <Template>
+      <Name>heading</Name>
+      <MiniTemplate><![CDATA[<heading><?xm-replace_text Themenangabe in Form einer Überschrift ?></heading>]]></MiniTemplate>
+    </Template>
+    <Template>
+      <Name>paragraph</Name>
+      <MiniTemplate><![CDATA[<paragraph><?xm-replace_text Eingabe von Textinformationen ?></paragraph>]]></MiniTemplate>
+    </Template>
+    <Template>
+      <Name>step</Name>
+      <MiniTemplate><![CDATA[<step><?xm-replace_text Handlungsschritt ?></step>]]></MiniTemplate>
+    </Template>
+  </Templates>
+  
+  <Images>
+    <Image>
+      <Name ns="">image</Name>
+      <Source-Attribute>objectname</Source-Attribute>
+    </Image>
+    <Image>
+      <Name ns="">inlinemediaobject</Name>
+      <Source-Attribute>objectname</Source-Attribute>
+    </Image>
+    <Image>
+      <Name ns="">safetysymbol</Name>
+      <Source-Attribute>objectname</Source-Attribute>
+    </Image>
+  </Images>
+  
+  <Links>
+    <SimpleLink>
+      <Name>xi:include</Name>
+      <Source-Attribute>href</Source-Attribute>
+      <EnableBuiltInChooser>true</EnableBuiltInChooser>
+      <ChooserFilterString>XML Documents (*.xml)|*.xml;|Text Documents (*.txt)|*.txt;||</ChooserFilterString>
+      <ChooserTitleString>Select a XML Inclusion Target Document</ChooserTitleString>
+      <EnableBuiltInFetcher>true</EnableBuiltInFetcher>
+      <EnableRebase>true</EnableRebase>
+    </SimpleLink>
+  </Links>
+</DTDExtensions>

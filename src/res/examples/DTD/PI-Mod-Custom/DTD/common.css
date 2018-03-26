@@ -1,0 +1,41 @@
+/* XMetaL styles */
+/*
+  *******************************************************************************
+  * RevisionInformation:
+  * $LastChangedRevision: 1970 $
+  * $LastChangedDate: 2009-08-17 12:06:40 +0200 (Mo, 17 Aug 2009) $
+  *******************************************************************************
+ */
+
+/* Allgemeine Formatierungen */
+$DOCUMENT {
+    font-family:   Arial Unicode MS, sans-serif;
+    font-size:     10pt;
+    line-height:   125%;
+    margin-top:    6px;
+    margin-left:   4px;
+    margin-bottom: 16px;
+    padding-left:  4px;
+    padding-top:   6px;
+    text-align:    left;
+}
+$MARKSEC {
+    display: block;
+    color: black;
+    white-space: pre;
+    font-family: monospace;
+    font-weight: normal;
+    font-size: 11pt;
+}
+$COMMENT {
+    display: inline;
+    color: #800000;
+    white-space: pre;
+    background-color: #E0E0E0;
+    text-align: left;
+}
+$PROCINS {
+      background-color: rgb(255,255,175);
+      color: rgb(150,150,150);
+      display: inline;
+}

@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ***************************************************************************
+
+Customized PI-Mod V1.2.0 - DTD module "localset-ents.ent"
+
+********************************************************************************
+
+Declares customized PI-Mod parameter entities for PI-Mod Standard.
+
+Public Identifier:
+
+	"-//PI-MOD-STANDARD//ENTITIES Customized PI-Mod V1.2.0//EN"
+
+Typical invocation:
+
+	<!ENTITY % localset-ents
+		PUBLIC "-//PI-MOD-STANDARD//ENTITIES Customized PI-Mod V1.2.0//EN"
+		"localset-ents.ent"
+	>
+	%localset-ents;
+
+********************************************************************************
+
+Copyright (C) 2011, The PI-Mod Project
+
+Contributors to the The PI-Mod Project (V1.2.2): 
+ 	 Wolfgang Ziegler 
+ 	 Stephan Steurer 
+ 	 Claudia Oberle
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+
+********************************************************************************
+
+Naming conventions for parameter entities:
+
+	cmf.ELEMENTGROUP	content model fragment: collects similar 
+				elements in group ELEMENTGROUP
+	cm.ELEMENT		content model: complete content model of element
+				ELEMENT
+	att.ATTRIBUTE		attribute: declaration of single attribute
+				ATTRIBUTE (with Name Type Default)
+	attv.ATTRIBUTE		attribute value enumeration: enumeration of
+				predefined values for Attribute ATTRIBUTE
+	atts.ATTRIBUTEGROUP	attribute sublist: collects attributes, which 
+				belong together, in group ATTRIBUTEGROUP
+	attl.ELEMENT		attribute list: complete attribute list of
+				element ELEMENT
+	attle.ELEMENT		attribute list extension: extension point for
+				additonial project specific attributes of
+				element ELEMENT; is always empty string in
+				PI-Mod Core DTD modules
+	csp.			conditional section parameter: conditional 
+				section for ... (see below), which can be
+				enabled (INCLUDE) or disabled (IGNORE)
+	csp.el.ELEMENT		... element: element declaration and
+				corresponding attribute declration of Element
+				ELEMENT
+	csp.es.ENTITY-SET	... entity set: declaration and call of 
+				parameter entity of entity set ENTITY-SET
+
+**************************************************************************** -->
+
+<!-- **************** Disabled PI-Mod element declarations ***************** -->
+
+<!-- =========================== Module structure ========================== -->
+
+
+<!-- ============================= Module types ============================ -->
+<!ENTITY % csp.el.collection
+    "IGNORE"
+>
+<!ENTITY % csp.el.collection_body
+    "IGNORE"
+>
+<!ENTITY % csp.el.description
+    "INCLUDE"
+>
+<!ENTITY % csp.el.diagnosis
+    "INCLUDE"
+>
+<!ENTITY % csp.el.errordescription
+    "INCLUDE"
+>
+<!ENTITY % csp.el.error-code
+    "INCLUDE"
+>
+<!ENTITY % csp.el.footnote
+    "INCLUDE"
+>
+<!ENTITY % csp.el.glossary
+    "INCLUDE"
+>
+<!ENTITY % csp.el.glossary-entry
+    "INCLUDE"
+>
+<!ENTITY % csp.el.glossdef
+    "INCLUDE"
+>
+<!ENTITY % csp.el.glossterm
+    "INCLUDE"
+>
+<!ENTITY % csp.el.identno
+    "INCLUDE"
+>
+<!ENTITY % csp.el.keyword
+    "INCLUDE"
+>
+<!ENTITY % csp.el.key-entry
+    "INCLUDE"
+>
+<!ENTITY % csp.el.link
+    "INCLUDE"
+>
+<!ENTITY % csp.el.lubrclass
+    "INCLUDE"
+>
+<!ENTITY % csp.el.lubricant
+    "INCLUDE"
+>
+<!ENTITY % csp.el.lubrication
+    "INCLUDE"
+>
+<!ENTITY % csp.el.lubricantinfo
+    "INCLUDE"
+>
+<!ENTITY % csp.el.medium
+    "INCLUDE"
+>
+<!ENTITY % csp.el.name
+    "INCLUDE"
+>
+<!ENTITY % csp.el.part
+    "INCLUDE"
+>
+<!ENTITY % csp.el.quantity
+    "INCLUDE"
+>
+<!ENTITY % csp.el.solution
+    "INCLUDE"
+>
+<!ENTITY % csp.el.spec
+    "INCLUDE"
+>
+<!ENTITY % csp.el.symbol
+    "INCLUDE"
+>
+<!ENTITY % csp.el.symptom
+    "INCLUDE"
+>
+<!ENTITY % csp.el.taskinterval
+    "INCLUDE"
+>
+<!ENTITY % csp.el.taskintervals
+    "INCLUDE"
+>
+<!ENTITY % csp.el.tool
+    "INCLUDE"
+>
+<!ENTITY % csp.el.toolinfo
+    "INCLUDE"
+>
+<!ENTITY % csp.el.tools
+    "INCLUDE"
+>
+<!ENTITY % csp.el.transno
+    "INCLUDE"
+>
+<!ENTITY % csp.el.variable
+    "INCLUDE"
+>
+<!ENTITY % csp.el.variable-set
+    "INCLUDE"
+>
+
+<!-- *********** Overwritten PI-Mod attribute value enumerations *********** -->
+
+
+<!-- ********** Overwritten PI-Mod single attribute declarations *********** -->
+
+
+<!-- ********** Overwritten PI-Mod attribute sublist declarations ********** -->
+
+
+<!-- ************ Overwritten PI-Mod attribute list declarations *********** -->
+
+
+<!-- ****************** Custom attribute list extensions ******************* -->
+
+
+<!-- ************* Overwritten PI-Mod content model fragments ************** -->
+<!ENTITY % cmf.justtext "
+	#PCDATA
+">
+<!ENTITY % cmf.typography "
+	emphasis | quoted | subscript | superscript
+">
+<!ENTITY % cmf.inlinemediaobjects "
+	inlinemediaobject
+">
+<!ENTITY % cmf.variables "
+	variable
+">
+<!ENTITY % cmf.inlinesemantics "
+	inlinedata | transno | user-interface
+">
+<!ENTITY % cmf.links "
+	link
+">
+<!ENTITY % cmf.numberunit "
+	%cmf.justtext; | %cmf.links; | subscript | superscript
+">
+<!ENTITY % cmf.plaintext "
+	%cmf.justtext; | %cmf.inlinemediaobjects; | %cmf.inlinesemantics;| %cmf.links; | %cmf.typography; | %cmf.variables; 
+">
+<!ENTITY % cmf.simpleblock "
+	footnote | keyword | list | paragraph | techdata
+">
+<!ENTITY % cmf.titletext "
+	%cmf.justtext; | keyword | %cmf.inlinemediaobjects; | %cmf.inlinesemantics; | quoted | subscript | superscript | %cmf.links;
+">
+<!ENTITY % cmf.values "
+	si-value | us-value
+">
+
+
+<!-- ***************** Overwritten PI-Mod content models ******************* -->
+<!ENTITY % cm.datatype "
+	(%cmf.justtext; | %cmf.values; | %cmf.links; | subscript | superscript)*
+">
+<!ENTITY % cm.emphasis "
+	(%cmf.justtext; | %cmf.inlinemediaobjects; | quoted | %cmf.links; | subscript | superscript | inlinedata)*
+">
+<!ENTITY % cm.mod "
+    (descriptive | task | diagnosis | taskintervals | tools | lubrication | glossary)
+">
+<!ENTITY % cm.list "
+	(keyword*, listintro?, item+, footnote*)
+">
+<!ENTITY % cm.quoted "
+	(%cmf.justtext; | emphasis | subscript | superscript | %cmf.inlinemediaobjects; | %cmf.links; | inlinedata)*
+">
+<!ENTITY % cm.table "
+	(keyword*, tgroup+, caption?, footnote*)
+">
+<!ENTITY % cm.task "
+    (heading, (diagnosisinfo | lubricantinfo | taskintervalinfo | toolinfo)*,orientation?, shortinfo?, prerequisites?, task_body?, task*)
+">
+<!ENTITY % cm.textdata "
+	(%cmf.justtext; | inlinedata | %cmf.links; | subscript | superscript)*
+">
+<!ENTITY % cm.user-interface "
+	(%cmf.justtext; | %cmf.inlinemediaobjects; | %cmf.links; | subscript | superscript | transno)*
+">
+
+
+<!-- **************** End of DTD module "localset-ents.ent" **************** -->

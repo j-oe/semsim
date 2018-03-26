@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>Starter for Ovidius TreeVision</comment>
+<entry key="dtd">pi-mod-custom.dtd</entry>
+<entry key="format">XML</entry>
+</properties>

@@ -1,0 +1,109 @@
+/* XMetaL styles */
+/*
+  *******************************************************************************
+  * RevisionInformation:
+  * $LastChangedRevision: 1970 $
+  * $LastChangedDate: 2009-08-17 12:06:40 +0200 (Mo, 17 Aug 2009) $
+  *******************************************************************************
+ */
+
+
+
+/*** ========================================================================================= ***/
+/*** // XIncludes ***/
+xi|include:before {
+    content: "Modul zum Einbinden ausw�hlen.";
+}
+xi|include[href]:before {
+    content : "Eingebundenes Modul [" attr(href) "]";
+
+}
+xi|include {
+    border: 0.5pt solid #4682B4;
+    color: #808080;
+    display : block;
+    margin : 5pt;
+    padding : 3pt;
+    background-color: #FFFF66;
+}
+
+/*** // Reused modules ***/
+
+xi|include > chapter,
+xi|include > descriptive,
+xi|include > diagnosis,
+xi|include > errordescription,
+xi|include > glossary,
+xi|include > glossary-entry,
+xi|include > lubricant,
+xi|include > lubrication,
+xi|include > mediaobject,
+xi|include > table,
+xi|include > task,
+xi|include > taskintervals,
+xi|include > tool,
+xi|include > tools 
+xi|include > safetyadvice,
+xi|include > textvar-defs
+{
+    border: #808080 solid 0.5pt;
+}
+
+
+/*** ========================================================================================= ***/
+/*** Heading styles ***/
+
+/*** // H1 ***/
+xi|include>*>heading:before
+{
+    content: counter(heading-level-1) ' ';
+}
+xi|include>*>heading
+{
+    color: #808080;
+    counter-increment: heading-level-1;
+    counter-reset:     heading-level-2;
+    font-size: 150%;
+    margin-bottom: 10px;
+}
+
+/*** // H2 ***/
+xi|include>*>*>heading:before
+{
+    content: counter(heading-level-1) '.' counter(heading-level-2) ' ';
+}
+xi|include>*>*>heading
+{
+    color: #808080;
+    counter-increment: heading-level-2;
+    counter-reset:     heading-level-3;
+    font-size: 135%;
+    margin-bottom: 8px;
+}
+
+/*** // H3 ***/
+xi|include>*>*>*>heading:before
+{
+    content: counter(heading-level-1) '.' counter(heading-level-2) '.' counter(heading-level-3) ' ';
+}
+xi|include>*>*>*>heading
+{
+    color: #808080;
+    counter-increment: heading-level-3;
+    counter-reset:     heading-level-4;
+    font-size: 125%;
+    margin-bottom: 5px;
+}
+
+/*** // H4 and more ***/
+xi|include>*>*>*>*>heading:before
+{
+    content: '';
+}
+xi|include>*>*>*>*>heading
+{
+    color: #808080;
+    counter-increment: heading-level-4;
+    font-size: 115%;
+    margin-bottom: 3px;
+}

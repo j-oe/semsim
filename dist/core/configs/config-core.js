@@ -1,0 +1,1 @@
+define({nrOfNgrams:2,similarityCalc:"cosine",weightingCalc:"tf-icf-cf",normalizeWeights:!0,tokenWeighting:1,signalsEnabled:!0,signalWeighting:2.5,minNrOfTokens:0,minLengthOfTokens:0});

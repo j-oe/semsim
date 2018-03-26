@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ***************************************************************************
+
+PI-Mod V1.2.2 - DTD Module "modtypes-elems.ent"
+
+********************************************************************************
+
+DTD module declares element types, which are the PI-Mod modules.
+
+Public Identifier:
+
+    "-//PI-MOD//ELEMENTS Module Types V1.2.2//EN"
+
+Typical invocation:
+
+	<!ENTITY % modtypes-elems
+		PUBLIC "-//PI-MOD//ELEMENTS Module Types V1.2.2//EN"
+		"modtypes-elems.ent"
+	>
+	%modtypes-elems;
+
+********************************************************************************
+
+Copyright (C) 2011, The PI-Mod Project
+
+Contributors to the The PI-Mod Project (V1.2.2): 
+ 	 Wolfgang Ziegler 
+ 	 Stephan Steurer 
+ 	 Claudia Oberle
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+
+********************************************************************************
+
+Naming conventions for parameter entities:
+
+	cmf.ELEMENTGROUP	content model fragment: collects similar 
+				elements in group ELEMENTGROUP
+	cm.ELEMENT		content model: complete content model of element
+				ELEMENT
+	att.ATTRIBUTE		attribute: declaration of single attribute
+				ATTRIBUTE (with Name Type Default)
+	attv.ATTRIBUTE		attribute value enumeration: enumeration of
+				predefined values for Attribute ATTRIBUTE
+	atts.ATTRIBUTEGROUP	attribute sublist: collects attributes, which 
+				belong together, in group ATTRIBUTEGROUP
+	attl.ELEMENT		attribute list: complete attribute list of
+				element ELEMENT
+	attle.ELEMENT		attribute list extension: extension point for
+				additonial project specific attributes of
+				element ELEMENT; is always empty string in
+				PI-Mod Core DTD modules
+	csp.			conditional section parameter: conditional 
+				section for ... (see below), which can be
+				enabled (INCLUDE) or disabled (IGNORE)
+	csp.el.ELEMENT		... element: element declaration and
+				corresponding attribute declration of Element
+				ELEMENT
+	csp.es.ENTITY-SET	... entity set: declaration and call of 
+				parameter entity of entity set ENTITY-SET
+
+**************************************************************************** -->
+
+<!-- **** Element <collection> **** -->
+
+<!ENTITY % csp.el.collection "INCLUDE">
+<![%csp.el.collection;[
+
+<!ENTITY % cm.collection "
+	(heading, orientation?, collection_body?, collection*)
+">
+<!ENTITY % attl.collection "
+   %atts.module;
+	%atts.classification;
+	%att.nodeid;
+	%att.translate;
+	%att.valid;
+">
+<!ENTITY % attle.collection "">
+
+<!ELEMENT collection %cm.collection;>
+<!ATTLIST collection
+	%attl.collection;
+	%attle.collection;
+>
+]]>
+
+
+<!-- **** Element <collection_body> **** -->
+
+<!ENTITY % csp.el.collection_body "INCLUDE">
+<![%csp.el.collection_body;[
+
+<!ENTITY % cm.collection_body "
+	(errordescription+ | glossary-entry+ | lubricant+ | part+ | table | taskinterval+ | tool+)
+">
+<!ENTITY % attl.collection_body "
+	%att.nodeid;
+	%att.translate;
+">
+<!ENTITY % attle.collection_body "">
+
+<!ELEMENT collection_body %cm.collection_body;>
+<!ATTLIST collection_body
+	%attl.collection_body;
+	%attle.collection_body;
+>
+]]>
+
+
+<!-- **** Element <descriptive> **** -->
+
+<!ENTITY % csp.el.descriptive "INCLUDE">
+<![%csp.el.descriptive;[
+
+<!ENTITY % cm.descriptive "
+	(heading, orientation?, descriptive_body?, descriptive*)
+">
+<!ENTITY % attl.descriptive "
+   %atts.module;
+	%atts.classification;
+	%att.nodeid;
+	%att.translate;
+	%att.valid;
+">
+<!ENTITY % attle.descriptive "">
+
+<!ELEMENT descriptive %cm.descriptive;>
+<!ATTLIST descriptive
+	%attl.descriptive;
+	%attle.descriptive;
+>
+]]>
+
+
+<!-- **** Element <descriptive_body> **** -->
+
+<!ENTITY % csp.el.descriptive_body "INCLUDE">
+<![%csp.el.descriptive_body;[
+
+<!ENTITY % cm.descriptive_body "
+	(%cmf.complexblock;)+
+">
+<!ENTITY % attl.descriptive_body "
+	%att.nodeid;
+	%att.translate;
+">
+<!ENTITY % attle.descriptive_body "">
+
+<!ELEMENT descriptive_body %cm.descriptive_body;>
+<!ATTLIST descriptive_body
+	%attl.descriptive_body;
+	%attle.descriptive_body;
+>
+]]>
+
+
+<!-- **** Element <task> **** -->
+
+<!ENTITY % csp.el.task "INCLUDE">
+<![%csp.el.task;[
+
+<!ENTITY % cm.task "
+	(heading, (diagnosisinfo | lubricantinfo | taskintervalinfo | toolinfo)*,orientation?, shortinfo?, prerequisites?, task_body?, task*)
+">
+<!ENTITY % attl.task "
+   %atts.module;
+	%atts.classification;
+	%att.nodeid;
+	%att.translate;
+	%att.valid;
+">
+<!ENTITY % attle.task "">
+
+<!ELEMENT task %cm.task;>
+<!ATTLIST task
+	%attl.task;
+	%attle.task;
+>
+]]>
+
+
+<!-- **** Element <task_body> **** -->
+
+<!ENTITY % csp.el.task_body "INCLUDE">
+<![%csp.el.task_body;[
+
+<!ENTITY % cm.task_body "
+	(((actiondescription | safetyadvice)*, action, or-action*, result?, troubleshooting*, note*)+, actionsequenceend?, outlook?)
+">
+<!ENTITY % attl.task_body "
+	%att.nodeid;
+	%att.translate;
+">
+<!ENTITY % attle.task_body "">
+
+<!ELEMENT task_body %cm.task_body;>
+<!ATTLIST task_body
+	%attl.task_body;
+	%attle.task_body;
+>
+]]>
+
+<!-- *************** End of DTD module "modtypes-elems.ent" **************** -->

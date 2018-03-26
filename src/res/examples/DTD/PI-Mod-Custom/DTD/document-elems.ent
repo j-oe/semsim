@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ***************************************************************************
+
+Customized PI-Mod V1.1.0 - DTD module "document-elems.ent"
+
+********************************************************************************
+
+Declares custom elements for 3S Project.
+
+Public Identifier:
+
+	"-//3S//ELEMENTS Document Elements Customized PI-Mod V1.1.0//EN"
+
+Typical invocation:
+
+	<!ENTITY % document-elems
+		PUBLIC "-//3S//ELEMENTS Customized PI-Mod V1.1.0//EN"
+		"document-elems.ent"
+	>
+	%document-elems;
+
+********************************************************************************
+
+Copyright (C) 2009, The PI-Mod Project
+
+Contributors to the The PI-Mod Project (V1.2.2): 
+ 	 Wolfgang Ziegler 
+ 	 Stephan Steurer 
+ 	 Claudia Oberle
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+
+********************************************************************************
+
+Naming conventions for parameter entities:
+
+	cmf.ELEMENTGROUP	content model fragment: collects similar 
+				elements in group ELEMENTGROUP
+	cm.ELEMENT		content model: complete content model of element
+				ELEMENT
+	att.ATTRIBUTE		attribute: declaration of single attribute
+				ATTRIBUTE (with Name Type Default)
+	attv.ATTRIBUTE		attribute value enumeration: enumeration of
+				predefined values for Attribute ATTRIBUTE
+	atts.ATTRIBUTEGROUP	attribute sublist: collects attributes, which 
+				belong together, in group ATTRIBUTEGROUP
+	attl.ELEMENT		attribute list: complete attribute list of
+				element ELEMENT
+	attle.ELEMENT		attribute list extension: extension point for
+				additonial project specific attributes of
+				element ELEMENT; is always empty string in
+				PI-Mod Core DTD modules
+	csp.			conditional section parameter: conditional 
+				section for ... (see below), which can be
+				enabled (INCLUDE) or disabled (IGNORE)
+	csp.el.ELEMENT		... element: element declaration and
+				corresponding attribute declration of Element
+				ELEMENT
+	csp.es.ENTITY-SET	... entity set: declaration and call of 
+				parameter entity of entity set ENTITY-SET
+
+**************************************************************************** -->
+
+<!-- ************************ Element declarations ************************* -->
+
+<!-- ======================== Aggregation Structure ======================== -->
+<!ENTITY % cm.document "
+	(meta-info?, filter-set?, variable-set?, (chapter | (descriptive | task | diagnosis | taskintervals | tools | lubrication | glossary | xi:include))+)
+">
+<!ELEMENT document
+    %cm.document;
+>
+<!ATTLIST document
+	countrycode (%attv.countries;) #IMPLIED
+	langcode (%attv.langcode;)  #IMPLIED
+    %att.nodeid;
+    %att.translate;
+>
+
+<!ENTITY % cm.chapter "
+	(heading, (chapter | (descriptive | task | diagnosis | taskintervals | tools | lubrication | glossary | xi:include))+)
+">
+<!ELEMENT chapter
+    %cm.chapter;
+>
+<!ENTITY % attle.chapter "">
+<!ATTLIST chapter
+	%attl.modtype;
+    %attle.chapter;
+>
+
+<!-- ============================== Meta-Info ============================== -->
+<!ELEMENT meta-info (docu-info?, covermedia?, prod-info?, manufacturer-info?, customer-info?)>
+<!ATTLIST meta-info
+    %att.nodeid; 
+>
+
+<!ELEMENT docu-info (docu-type?, title, docu-number?, language?, version?, creationdate?, releasedate?, author?)>
+<!ATTLIST docu-info
+    %att.nodeid; 
+>
+
+<!ELEMENT prod-info (prod-type?, prod-number?)>
+<!ATTLIST prod-info
+    %att.nodeid; 
+>
+
+<!ELEMENT manufacturer-info (name?, post-office-box?, postcode?, city?, country?, telephone?, fax?, e-mail?, website?)>
+<!ATTLIST manufacturer-info
+    %att.nodeid; 
+>
+
+<!ELEMENT creationdate (%cmf.justtext;)>
+<!ATTLIST creationdate
+  %att.nodeid; 
+>
+
+<!ELEMENT customer-info (name?, city?, country?)>
+<!ATTLIST customer-info
+    %att.nodeid; 
+>
+
+<!ELEMENT docu-type (%cmf.justtext;)>
+<!ATTLIST docu-type
+  %att.nodeid; 
+>
+
+<!ELEMENT docu-number (%cmf.justtext;)>
+<!ATTLIST docu-number
+  %att.nodeid; 
+>
+
+<!ELEMENT title (%cmf.justtext;)>
+<!ATTLIST title
+  %att.nodeid; 
+>
+
+<!ELEMENT version (%cmf.justtext;)>
+<!ATTLIST version
+  %att.nodeid; 
+>
+
+<!ELEMENT releasedate (%cmf.justtext;)>
+<!ATTLIST releasedate
+    %att.nodeid; 
+>
+
+<!ELEMENT author (%cmf.justtext;)>
+<!ATTLIST author
+    %att.nodeid; 
+>
+
+<!ELEMENT language (%cmf.justtext;)>
+<!ATTLIST language
+    %att.nodeid; 
+>
+
+<!ELEMENT prod-number (%cmf.justtext;)>
+<!ATTLIST prod-number
+    %att.nodeid; 
+>
+
+<!ELEMENT prod-type (%cmf.justtext;)>
+<!ATTLIST prod-type
+    %att.nodeid; 
+>
+
+<!ELEMENT post-office-box (%cmf.justtext;)>
+<!ATTLIST post-office-box
+    %att.nodeid; 
+>
+
+<!ELEMENT postcode (%cmf.justtext;)>
+<!ATTLIST postcode
+    %att.nodeid; 
+>
+
+<!ELEMENT city (%cmf.justtext;)>
+<!ATTLIST city
+    %att.nodeid; 
+>
+
+<!ELEMENT telephone (%cmf.justtext;)>
+<!ATTLIST telephone
+    %att.nodeid; 
+>
+
+<!ELEMENT fax (%cmf.justtext;)>
+<!ATTLIST fax
+    %att.nodeid; 
+>
+
+<!ELEMENT e-mail (%cmf.justtext;)>
+<!ATTLIST e-mail
+    %att.nodeid; 
+>
+
+<!ELEMENT website (%cmf.justtext;)>
+<!ATTLIST website
+    %att.nodeid; 
+>
+
+<!ELEMENT country (%cmf.justtext;)>
+<!ATTLIST country
+    %att.nodeid; 
+>
+
+<!ELEMENT covermedia (image?)>
+<!ATTLIST covermedia
+    %att.nodeid;
+>
+
+
+<!-- ============================== Filter ============================== -->
+
+<!ENTITY % csp.el.filter-set "INCLUDE">
+<![%csp.el.filter-set;[
+
+<!ELEMENT filter-set (filter)+>
+<!ATTLIST filter-set
+	%att.nodeid; 
+    %att.translate;
+>
+
+]]>
+
+<!ENTITY % csp.el.filter "INCLUDE">
+<![%csp.el.filter;[
+
+<!ENTITY % attv.filterclass "
+	(type | prodclass-1 | infoclass-1 | valid)
+">
+<!ENTITY  % att.filterclass "
+	filterclass  %attv.filterclass;  #REQUIRED
+">
+<!ELEMENT filter (filter)*>
+<!ATTLIST filter
+	%att.nodeid; 
+    %att.translate;
+    %att.filterclass;
+    value CDATA #REQUIRED
+>
+
+]]>
+
+<!ENTITY % csp.el.variable-set "INCLUDE">
+<![%csp.el.variable-set;[
+
+<!ELEMENT variable-set (variable)+>
+<!ATTLIST variable-set
+	%att.nodeid; 
+    %att.translate;
+    
+>
+
+]]>
+
+
+<!-- ======================== XI include concept ======================== -->
+<!ELEMENT xi:include (xi:fallback?)>
+
+<!ATTLIST xi:include
+    xmlns:xi        CDATA       #FIXED    "http://www.w3.org/2001/XInclude"
+    href            CDATA       #IMPLIED
+    parse           (xml|text)  "xml"
+    xpointer        CDATA       #IMPLIED
+    encoding        CDATA       #IMPLIED
+    accept          CDATA       #IMPLIED
+    accept-language CDATA       #IMPLIED
+
+>
+
+<!ELEMENT xi:fallback (descriptive | task | diagnosis | taskintervals | tools | lubrication | glossary)>
+
+<!ATTLIST xi:fallback
+    xmlns:xi        CDATA       #FIXED    "http://www.w3.org/2001/XInclude"
+>
+
+
+<!-- *************** End of DTD module "document-elems.ent" **************** -->
